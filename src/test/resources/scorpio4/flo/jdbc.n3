@@ -1,0 +1,24 @@
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
+
+@prefix test: 		<urn:scorpio4tests:>.
+@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
+@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
+@prefix mime: 		<http://www.iana.org/assignments/media-types/>.
+
+<bean:org.hsqldb.jdbc.JDBCDataSource>	a	bean:Bean.
+
+test:hsqldb
+	a 				<bean:org.hsqldb.jdbc.JDBCDataSource>;
+	bean:url		"mem:.";
+	bean:user		"SA";
+	bean:password	"";
+.
+
+test:		flo:from 		<restlet:http://localhost:9090/tests/flo/jdbc/{query}>.
+
+<restlet:http://localhost:9090/tests/flo/jdbc/{query}> flo:to (
+	[ flo:body "SELECT * FROM y" ]
+	[ flo:script "'SELECT * FROM w' " ]
+# ^^<http://www.iana.org/assignments/media-types/application/x-groovy> ]
+	[ flo:to <jdbc:urn:scorpio4tests:hsqldb>]
+).

@@ -1,7 +1,7 @@
 package com.scorpio4.vendor.camel
 
 import com.scorpio4.test.Scorpio4TestCase
-import com.scorpio4.vendor.camel.planner.FLOSupport
+import com.scorpio4.vendor.camel.flo.FLOSupport
 /**
  * Scorpio (c) 2014
  * Module: com.scorpio4.vendor.camel

@@ -12,7 +12,7 @@
     <artifactId>scorpio4tests</artifactId>
     <packaging>jar</packaging>
 
-    <name>Scorpio4 Demo</name>
+    <name>Scorpio4 Test Suite</name>
     <url>http://www.scorpio4.com</url>
 
     <organization>
@@ -25,7 +25,7 @@
             <id>lee</id>
             <name>Lee Curtis</name>
             <email>lee.curtis@me.com</email>
-            <organization>Troven / Scorpio4</organization>
+            <organization>Scorpio4 Foundation</organization>
             <roles>
                 <role>architect</role>
                 <role>developer</role>
@@ -140,13 +140,19 @@
 
         <dependency>
             <groupId>com.scorpio4</groupId>
-            <artifactId>scorpio4rdf</artifactId>
+            <artifactId>scorpio4runtime</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.scorpio4</groupId>
             <artifactId>scorpio4dba</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.scorpio4</groupId>
+            <artifactId>scorpio4curators</artifactId>
             <version>${project.version}</version>
         </dependency>
 
