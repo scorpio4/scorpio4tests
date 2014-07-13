@@ -1,0 +1,20 @@
+@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
+@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
+@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+
+# Declare initial FLOs for deploy
+
+
+<urn:scorpio4tests:>
+	flo:from			<direct:test>;
+.
+
+<direct:test>	flo:to (
+	[ flo:do			<self:asset:urn:scorpio4tests:pipeline:sparql> ]
+	[ flo:do 			<sparql:urn:scorpio4tests:> ]
+).
+
+
+<urn:scorpio4tests:pipeline:sparql>
+	core:hasAsset			"SELECT DISTINCT ?s ?p ?o WHERE {?s ?p ?o } LIMIT 2"^^<http://www.iana.org/assignments/media-types/application/x-sparql-query>;
+.

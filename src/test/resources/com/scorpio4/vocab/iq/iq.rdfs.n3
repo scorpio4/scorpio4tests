@@ -6,6 +6,7 @@
 @prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
 
 @prefix iq: 		<http://scorpio4.com/vocab/v1/iq/>.
+@prefix fab: 		<http://scorpio4.com/vocab/v1/fab/>.
 @prefix : 		    <http://scorpio4.com/vocab/v1/iq/>.
 
 :	a					owl:Ontology;

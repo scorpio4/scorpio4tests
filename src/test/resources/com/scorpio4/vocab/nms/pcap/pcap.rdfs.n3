@@ -21,8 +21,8 @@
 	rdfs:label			"Network Sniffer";
 	dc:title			"Network Sniffer";
 	rdfs:comment		"Vocabulary for describing NMS packet capture.";
-	dc:created			"2013-07-1"^^xsd:date;
-	dc:modified			"2013-07-1"^^xsd:date;
+	dc:created			"2013-07-01"^^xsd:date;
+	dc:modified			"2013-07-01"^^xsd:date;
 	dc:license 			<http://www.opendatacommons.org/licenses/pddl/1.0/>
 .
 

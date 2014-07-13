@@ -30,16 +30,16 @@ public class Scorpio4TestCase extends GroovyTestCase {
 		repository = new MemoryRDFSRepository();
 		connection = repository.getConnection();
 		applicationContext = new GenericApplicationContext();
-		factSpace = new FactSpace(connection, IDENTITY);
+		factSpace = new FactSpace(IDENTITY, repository);
 	}
 
-	void testIdentityOfScorpio() {
+	public void testIdentityOfScorpio() {
 		assert IDENTITY.indexOf("scorpio4")>0;
 	}
 
 	public void provision(String resourcePath) throws RepositoryException, FactException, IOException {
 		if (repository==null) initialize();
-		MemoryRDFSRepository deploy = repository.deploy(resourcePath);
+		repository.deploy(resourcePath);
 	}
 
 	public void finalize() throws RepositoryException {

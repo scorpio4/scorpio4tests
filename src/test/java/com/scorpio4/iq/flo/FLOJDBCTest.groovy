@@ -1,6 +1,7 @@
-package com.scorpio4.iq
-import com.scorpio4.deploy.Scorpio4SesameDeployer
-import com.scorpio4.runtime.MockEngine
+package com.scorpio4.iq.flo
+//import com.scorpio4.iq.FLOVocabulary
+//import com.scorpio4.iq.ActiveBeansVocabulary
+import com.scorpio4.test.Scorpio4TestCase
 /**
  * Scorpio4 (c) 2014
  * Module: com.scorpio4.iq
@@ -10,18 +11,18 @@ import com.scorpio4.runtime.MockEngine
  *
  *
  */
-class FLOJDBCTest extends GroovyTestCase {
+public class FLOJDBCTest extends Scorpio4TestCase {
 
-	void testSimpleFLO() {
-		MockEngine engine = new MockEngine();
-		Scorpio4SesameDeployer sesameDeployer = new Scorpio4SesameDeployer(engine.getFactSpace());
-		sesameDeployer.classpath("scorpio4/flo/jdbc.n3");
-		engine.reboot();
-
-		SpringyBeansVocabulary beans = new SpringyBeansVocabulary(engine);
-		FLOVocabulary flo = new FLOVocabulary(engine);
-		flo.start();
-		Thread.sleep(20000)
-	}
+//	public void testSimpleFLO() {
+//		MockEngine engine = new MockEngine();
+//		Scorpio4SesameDeployer sesameDeployer = new Scorpio4SesameDeployer(engine.getFactSpace());
+//		sesameDeployer.classpath("scorpio4/flo/jdbc.n3");
+//		engine.reboot();
+//
+//		new ActiveBeansVocabulary(engine);
+//		FLOVocabulary flo = new FLOVocabulary(engine);
+//		flo.start();
+//		Thread.sleep(20000)
+//	}
 
 }

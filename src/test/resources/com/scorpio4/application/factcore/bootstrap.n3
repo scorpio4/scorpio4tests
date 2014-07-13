@@ -22,7 +22,7 @@
 	rdfs:label 		"Scorpio4 Admin";
     iq:enabled       "true"^^xsd:boolean;
 
-	Scorpio4		<urn:com.scorpio4:application:com.scorpio4:finder:core>;
+	fact:from		<urn:com.scorpio4:application:com.scorpio4:finder:core>;
 	fact:from       <urn:com.scorpio4:application:com.scorpio4:finder:models>;
 	fact:from       <urn:com.scorpio4:application:com.scorpio4:finder:emails>;
 

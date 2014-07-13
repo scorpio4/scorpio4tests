@@ -1,0 +1,50 @@
+@prefix hydra:		<http://www.w3.org/ns/hydra/core#>.
+@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
+@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
+@prefix :			<urn:scorpio4tests:hydra:mock_api:>.
+
+<urn:scorpio4tests:>	hydra:apiDocumentation	:.
+
+:
+	a							hydra:ApiDocumentation;
+	hydra:supportedProperty		:p1;
+	hydra:entrypoint			<restlet:http://localhost:9090/>;
+	hydra:supportedClass		:RequestConsumer;
+.
+
+:RequestConsumer
+	a							hydra:Class;
+	hydra:title					"Demo RESTful API";
+	hydra:supportedProperty		:host;
+	hydra:supportedOperation	:GET;
+.
+
+:endpoint
+	hydra:search [
+		a							hydra:IriTemplate;
+		hydra:template				"restlet:http://{host}/{feature}";
+		hydra:mapping				(
+			[
+				hydra:variable		"host";
+				hydra:property		:host;
+				hydra:required		"true"^^xsd:boolean;
+			]
+			[
+				hydra:variable		"feature";
+				hydra:property		:feature;
+				hydra:required		"true"^^xsd:boolean;
+			]
+		);
+	]
+.
+
+:host
+	a							hydra:SupportedProperty;
+	hydra:property				core:localhost;
+	hydra:required				"true"^^xsd:boolean;
+	hydra:readonly				"true"^^xsd:boolean;
+	hydra:writeonly				"false"^^xsd:boolean;
+.
+
+

@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.scorpio4</groupId>
         <artifactId>scorpio4</artifactId>
-        <version>0.09-SNAPSHOT</version>
+        <version>0.06-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
@@ -57,6 +57,23 @@
                 <groupId>com.scorpio4</groupId>
                 <artifactId>scorpio4maven</artifactId>
                 <version>${project.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>com.scorpio4</groupId>
+                <artifactId>scorpio4dba</artifactId>
+                <version>${project.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>com.scorpio4</groupId>
+                <artifactId>scorpio4runtime</artifactId>
+                <version>${project.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.scorpio4</groupId>
+                        <artifactId>scorpio4core</artifactId>
+                        <version>${project.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <!--Groovy Eclipse compiler plugin compiles both .groovy and .java sources-->
@@ -110,25 +127,6 @@
                     <!--</execution>-->
                 <!--</executions>-->
             <!--</plugin>-->
-            <plugin>
-                <groupId>org.codehaus.gmaven</groupId>
-                <artifactId>gmaven-plugin</artifactId>
-                <version>1.4</version>
-                <configuration>
-                    <providerSelection>2.0</providerSelection>
-                    <source />
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generateStubs</goal>
-                            <goal>compile</goal>
-                            <goal>generateTestStubs</goal>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
@@ -149,7 +147,7 @@
 
         <dependency>
             <groupId>com.scorpio4</groupId>
-            <artifactId>scorpio4vocabs</artifactId>
+            <artifactId>scorpio4dba</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -169,12 +167,6 @@
             <groupId>com.scorpio4</groupId>
             <artifactId>scorpio4runtime</artifactId>
             <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
         </dependency>
 
         <!--<dependency>-->

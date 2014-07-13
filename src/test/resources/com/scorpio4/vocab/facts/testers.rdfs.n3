@@ -16,8 +16,8 @@
 	rdfs:label			"Fact:Tester"@en;
 	dc:title			"Fact:Tester vocabulary"@en;
 	rdfs:comment		"Vocabulary for describing value checks."@en;
-	dc:created			"2014-02-5"^^xsd:date;
-	dc:modified			"2014-02-5"^^xsd:date;
+	dc:created			"2014-02-05"^^xsd:date;
+	dc:modified			"2014-02-05"^^xsd:date;
 	dc:license 			<http://www.opendatacommons.org/licenses/pddl/1.0/>
 .
 :test

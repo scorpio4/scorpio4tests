@@ -19,6 +19,5 @@ test:		flo:from 		<restlet:http://localhost:9090/tests/flo/jdbc/{query}>.
 <restlet:http://localhost:9090/tests/flo/jdbc/{query}> flo:to (
 	[ flo:body "SELECT * FROM y" ]
 	[ flo:script "'SELECT * FROM w' " ]
-# ^^<http://www.iana.org/assignments/media-types/application/x-groovy> ]
 	[ flo:to <jdbc:urn:scorpio4tests:hsqldb>]
 ).
