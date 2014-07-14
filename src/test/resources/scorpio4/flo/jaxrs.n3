@@ -1,0 +1,19 @@
+@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
+@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
+@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+
+<urn:scorpio4tests:>
+	flo:from			<cxfrs:bean:urn:com.scorpio4.test.JAXRS>;
+.
+
+# Declare a FLO pipeline
+# 1. retrieve SPARQL query as a named Asset
+# 2. execute SPARQL query using Engine's default repository
+# 3. save the result into the ./temp.test/ directory
+
+<cxfrs:bean:urn:com.scorpio4.test.JAXRS>	flo:to (
+	<file://temp.test/jaxrs/>
+).
+
+<urn:com.scorpio4.test.JAXRS> a <bean:com.scorpio4.test.JAXRS>.
+<bean:com.scorpio4.test.JAXRS> a bean:Bean.

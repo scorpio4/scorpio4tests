@@ -5,7 +5,7 @@ import org.openrdf.model.ValueFactory
 import org.openrdf.model.impl.ValueFactoryImpl
 /**
  * Scorpio4 (c) 2012
- * User: lee
+ * @author lee
  * Date: 2/08/13
  * Time: 3:19 PM
  * 

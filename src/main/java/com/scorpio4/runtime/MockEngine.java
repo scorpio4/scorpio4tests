@@ -76,4 +76,8 @@ public class MockEngine implements ExecutionEnvironment {
 	public void provision(String resourcePath, ClassLoader classLoader) throws RepositoryException, FactException, IOException {
 		repository.deploy(resourcePath, classLoader);
 	}
+
+	public void provision(String resourcePath) throws RepositoryException, FactException, IOException {
+		repository.deploy(resourcePath, Thread.currentThread().getContextClassLoader());
+	}
 }
