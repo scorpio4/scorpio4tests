@@ -11,16 +11,16 @@ import org.junit.Test;
  * Date  : 14/07/2014
  * Time  : 2:46 AM
  */
-public class PipelineTest extends GroovyTestCase {
+public class SPARQLTest extends GroovyTestCase {
 
 	@Test
 	public void testPipeline() throws Exception {
 		MockEngine engine = new MockEngine();
-		engine.provision("scorpio4/flo/pipeline.n3", getClass().getClassLoader());
+		engine.provision("scorpio4/flo/sparql.n3", getClass().getClassLoader());
 
 		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);
 		activeVocabularies.startAndWait();
-		def deployed = activeVocabularies.activate("direct:test", null);
+		def deployed = activeVocabularies.activate("direct:sparql:test", null);
 		println "Deployed: "+deployed.getClass()
-		Thread.sleep(10000);
+		Thread.sleep(1000);
 	}}
