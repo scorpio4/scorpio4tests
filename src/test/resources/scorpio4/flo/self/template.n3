@@ -1,0 +1,65 @@
+# scorpio4test
+#
+# A sequential FLO that provides a rudimentary HTML templating service
+# The FLO can be initiated directly or through a HTTP call to the
+# internal REST-let web API - http://localhost:9090/flo/self/template
+#
+
+# Scorpio4's namespaces
+@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
+@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
+@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+
+# Declare the main FLO pipeline
+<direct:flo:self:template>	flo:to (
+
+# Retrieve SPARQL query as a named Asset
+	[ flo:to <self:asset:urn:scorpio4tests:flo:self:template:sparql>]
+
+# Run a SPARQL Select query against our Engine's Repository
+	[ flo:to <sparql:self> ] # More portable than <sparql:urn:scorpio4tests:>
+
+# Feed the results into an (HTML) template (urn:scorpio4tests:flo:self:template), defined below
+	[ flo:to <self:template:urn:scorpio4tests:flo:self:template>]
+
+# Save the result into the ./temp.test/ directory
+# When called via the API, this is redundant, but it could be adapted in an audit trail.
+	[ flo:to <file://temp.test/flo/self/template/> ]
+).
+
+# Define the HTML template as a core:Asset
+# During development it should be saved in ./scorpio4tests/flo/self/template.html
+# The .html of the file extension will be used deduce the Content-Type
+<urn:scorpio4tests:flo:self:template>
+	core:hasAsset			"""
+<html>
+<body>
+<ul>
+<% body.each {
+		print "<li>${it.to}</li>"
+	}
+%>
+</ul>
+</body>
+</html>
+"""^^<http://www.iana.org/assignments/media-types/application/x-groovy>. # it's a groovy template. or a broken bean.
+
+# Define the SPARQL query as named Asset
+<urn:scorpio4tests:flo:self:template:sparql>
+	core:hasAsset			"""# @namespaces
+SELECT DISTINCT ?to WHERE {?s flo:to ?to } LIMIT 2
+"""^^<http://www.iana.org/assignments/media-types/application/x-sparql-query>;
+.
+
+# We still need to start the FLO, so we configure the Engine
+<urn:scorpio4tests:>
+	flo:from			<direct:flo:self:template>;
+	flo:from			<restlet:http://localhost:9090/flo/self/template>;
+.
+
+# And finally, the REST-let API ...
+<restlet:http://localhost:9090/flo/self/template> flo:to <direct:flo:self:template>.
+
+# Of course, could trigger it from 100s of different endpoints ...
+
+

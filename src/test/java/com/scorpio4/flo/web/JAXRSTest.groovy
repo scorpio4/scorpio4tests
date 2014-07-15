@@ -1,4 +1,4 @@
-package com.scorpio4.flo.self
+package com.scorpio4.flo.web
 import com.scorpio4.iq.vocab.Scorpio4ActiveVocabularies
 import com.scorpio4.runtime.MockEngine
 import org.apache.cxf.jaxrs.JAXRSServiceImpl

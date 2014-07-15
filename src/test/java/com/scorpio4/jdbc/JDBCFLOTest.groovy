@@ -14,7 +14,7 @@ import javax.sql.DataSource
  */
 class JDBCFLOTest extends GroovyTestCase {
 
-	public void testRoute() {
+	public void testFLO() {
 		MockEngine engine = new MockEngine();
 		engine.provision("scorpio4/flo/jdbc.n3", getClass().getClassLoader());
 

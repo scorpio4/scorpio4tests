@@ -12,9 +12,9 @@ import org.junit.Test
 public class DeployTest extends GroovyTestCase {
 
 	@Test
-	public void testDeployRoute() throws Exception {
+	public void testRoute() throws Exception {
 		MockEngine engine = new MockEngine();
-		engine.provision("scorpio4/flo/deploy.n3", getClass().getClassLoader());
+		engine.provision("scorpio4/flo/self/deploy.n3", getClass().getClassLoader());
 
 		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);
 		activeVocabularies.startAndWait();
