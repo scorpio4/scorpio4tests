@@ -37,6 +37,7 @@ public class MockEngine implements ExecutionEnvironment {
 		assetRegisters = new AssetRegisters(connection);
 		repositoryResolver = new MockRepositoryManager(repository);
 		context = new GenericApplicationContext();
+		config.put("identity", identity);
 	}
 
 	@Override
@@ -69,6 +70,11 @@ public class MockEngine implements ExecutionEnvironment {
 	}
 
 	@Override
+	public ClassLoader getClassLoader() {
+		return Thread.currentThread().getContextClassLoader();
+	}
+
+	@Override
 	public String getIdentity() {
 		return identity;
 	}
@@ -78,6 +84,6 @@ public class MockEngine implements ExecutionEnvironment {
 	}
 
 	public void provision(String resourcePath) throws RepositoryException, FactException, IOException {
-		repository.deploy(resourcePath, Thread.currentThread().getContextClassLoader());
+		repository.deploy(resourcePath, getClassLoader());
 	}
 }

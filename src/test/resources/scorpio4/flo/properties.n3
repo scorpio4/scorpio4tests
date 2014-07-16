@@ -1,0 +1,17 @@
+@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
+@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
+@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+
+<urn:scorpio4tests:>
+	flo:from			<direct:flo:properties>;
+.
+
+# Declare a FLO
+
+<direct:flo:properties>	flo:to (
+#	<properties:identity>
+	[ flo:script "return ''+new Date()"^^<http://www.iana.org/assignments/media-types/application/x-groovy> ]
+	[ flo:log "hello" ]
+	<file://temp.test/flo/properties/{{identity}}/>
+).
+

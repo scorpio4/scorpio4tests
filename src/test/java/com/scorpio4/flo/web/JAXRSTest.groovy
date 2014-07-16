@@ -18,7 +18,7 @@ class JAXRSTest extends GroovyTestCase {
 
 	public void testRoute() {
 		MockEngine engine = new MockEngine();
-		engine.provision("scorpio4/flo/jaxrs.n3", getClass().getClassLoader());
+		engine.provision("scorpio4/flo/web/jaxrs.n3", getClass().getClassLoader());
 
 
 		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);

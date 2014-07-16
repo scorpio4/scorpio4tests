@@ -27,7 +27,7 @@ public class JAXRS {
 
 	@GET
 	public Response get(@PathParam("assetURI") final String assetURI, @Context UriInfo uriInfo) {
-		log.debug("JAXRS: "+assetURI+" -> "+uriInfo);
+		log.warn("JAXRS: "+assetURI+" -> "+uriInfo);
 		return Response.ok("hello: "+assetURI).build();
 	}
 
