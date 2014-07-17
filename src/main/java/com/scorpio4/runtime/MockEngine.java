@@ -5,6 +5,8 @@ import com.scorpio4.assets.AssetRegisters;
 import com.scorpio4.oops.FactException;
 import com.scorpio4.vendor.sesame.MockRepositoryManager;
 import com.scorpio4.vendor.sesame.store.MemoryRDFSRepository;
+import com.scorpio4.vendor.sesame.util.SesameHelper;
+import com.scorpio4.vocab.COMMON;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryException;
 import org.openrdf.repository.sail.SailRepositoryConnection;
@@ -37,7 +39,18 @@ public class MockEngine implements ExecutionEnvironment {
 		assetRegisters = new AssetRegisters(connection);
 		repositoryResolver = new MockRepositoryManager(repository);
 		context = new GenericApplicationContext();
+		defaultConfig();
+		SesameHelper.defaultNamespaces(connection);
+		connection.begin();
+		connection.setNamespace("flo", COMMON.CORE+"flo/");
+		connection.setNamespace("bean", COMMON.CORE+"bean/");
+		connection.setNamespace("asq", COMMON.CORE+"asq/");
+		connection.commit();
+	}
+
+	private void defaultConfig() {
 		config.put("identity", identity);
+		config.put("httpPort", 9091);
 	}
 
 	@Override

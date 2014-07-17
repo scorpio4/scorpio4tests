@@ -19,7 +19,7 @@ class ScriptTest extends Scorpio4TestCase {
 
     void testScriptAsset() {
         Scripting script = new Scripting();
-	    Asset asset = new Asset("return 'hello world'", COMMON.MIME_GROOVY);
+	    Asset asset = new Asset("urn:test", "return 'hello world'", COMMON.MIME_GROOVY);
         Future done = script.execute(asset, new HashMap());
         assert done.get()!=null;
         assert done.get() == "hello world";

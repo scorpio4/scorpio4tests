@@ -7,5 +7,5 @@
 <urn:scorpio4tests:>	flo:from	<file://./scorpio4/scorpio4tests/src/test/resources/?noop=true&recursive=true> .
 
 <file://./scorpio4/scorpio4tests/src/test/resources/?noop=true&recursive=true>
-	flo:to	(<log:deploy?level=INFO> <self:deploy:).
+	flo:to	(<log:deploy?level=INFO> <self:deploy:>).
 

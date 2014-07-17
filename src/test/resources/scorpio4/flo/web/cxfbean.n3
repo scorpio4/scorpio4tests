@@ -3,12 +3,12 @@
 @prefix core: 		<http://scorpio4.com/vocab/v1/>.
 
 <urn:scorpio4tests:>
-	flo:from			<jetty:http://0.0.0.0:9091/flo/web/cxfbean>;
+	flo:from			<jetty:http://0.0.0.0:{httpPort}/flo/cxfbean>;
 .
 
-<jetty:http://0.0.0.0:9091/flo/web/cxfbean> flo:to (
-	<cxfbean:urn:com.scorpio4.test.JAXRS>
-	<file://temp.test/jaxrs/>
+<jetty:http://0.0.0.0:{httpPort}/flo/cxfbean> flo:to (
+	[ flo:script "hello" ]
+	[ flo:to <file://temp.test/jaxrs/> ]
 ).
 
 <urn:com.scorpio4.test.JAXRS> a <bean:com.scorpio4.test.JAXRS>.

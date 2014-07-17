@@ -17,8 +17,8 @@ public class HydraVocabularyTest extends GroovyTestCase {
 		MockEngine engine = new MockEngine();
 		engine.provision("scorpio4/hydra/mock_api.n3", HydraVocabulary.class.getClassLoader());
 		engine.provision("scorpio4/vocabs/hydra/hydra-cg.n3", COMMON.class.getClassLoader());
-		HydraVocabulary hydra = new HydraVocabulary();
-		hydra.boot(engine);
+		HydraVocabulary hydra = new HydraVocabulary(engine);
+		assert hydra.isActive();
 	}
 
 }

@@ -1,0 +1,33 @@
+# W3C - RDF & RDFS
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eg: 		<http://example.org/>.
+
+# Scorpio4 Active Vocabularies
+@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
+@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
+@prefix asq: 		<http://scorpio4.com/vocab/v1/asq/>.
+@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+
+
+# In ASQ the namespace is significant.
+# Any URI scoped to the namespace of the query is consider part of the solution.
+#
+@prefix : 			<urn:scorpio4tests:asq:infer:>.
+
+
+# An inference is constructed for each solution
+:	a				asq:Inference, eg:Example;
+
+	asq:where [
+		asq:this	:this;
+		asq:has		rdf:type;
+		asq:that	eg:ASQExample;
+	];
+.
+
+:test
+	a			asq:Intuition;
+	asq:when	<urn:scorpio4tests:asq:simple:>;
+	asq:learn	:;
+.

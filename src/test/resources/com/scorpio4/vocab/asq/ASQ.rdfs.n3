@@ -25,14 +25,28 @@
 :Query
 	a					rdfs:Class;
 	rdfs:label			"Query";
-	rdfs:comment 		"A Query consists of Matchers";
+	rdfs:comment 		"A Query constrained of Patterns";
 	rdfs:isDefinedBy	:;
 .
 
-:Matcher
+:Inference
 	a					rdfs:Class;
-	rdfs:label			"Matcher";
-	rdfs:comment 		"A matcher consists of ?that ?has ?this clauses";
+	rdfs:label			"Inference";
+	rdfs:comment 		"An Inference Query produces of Patterns";
+	rdfs:isDefinedBy	:;
+.
+
+:Intuition
+	a					rdfs:Class;
+	rdfs:label			"Intuition";
+	rdfs:comment 		"An Inference based on a Query";
+	rdfs:isDefinedBy	:;
+.
+
+:Pattern
+	a					rdfs:Class;
+	rdfs:label			"Pattern";
+	rdfs:comment 		"A Pattern consists of ?that ?has ?this clauses";
 	rdfs:isDefinedBy	:;
 .
 
@@ -48,50 +62,56 @@
 	rdfs:isDefinedBy	:;
 	rdfs:label 			"where";
 	rdfs:domain			:Query;
-	rdfs:range  		:Matcher;
+	rdfs:range  		:Pattern;
 .
 
-:filter
-	a					rdf:Property;
-	rdfs:subPropertyOf	iq:script;
+:nested
+	rdfs:subPropertyOf	:where;
 	rdfs:isDefinedBy	:;
-	rdfs:label 			"where";
-	rdfs:domain			:Model;
-	rdfs:range  		:ScriptedBehaviour;
+	rdfs:label 			"next pattern";
+#	rdfs:domain			:Pattern;
+	rdfs:range  		:Pattern;
 .
-
-:next
-	a					owl:ObjectProperty;
-	rdfs:isDefinedBy	:;
-	rdfs:label 			"next query";
-#	rdfs:domain			:Query;
-	rdfs:range  		:Query;
-.
-
 :that
 	a					owl:ObjectProperty;
 	rdfs:isDefinedBy	:;
 	rdfs:label 			"?that";
 	rdfs:range  		:Term;
+	rdfs:domain			:Pattern;
 .
 :has
 	a					owl:ObjectProperty;
 	rdfs:isDefinedBy	:;
 	rdfs:label 			"?has";
 	rdfs:range  		:Term;
+	rdfs:domain			:Pattern;
 .
 :this
 	a					owl:ObjectProperty;
 	rdfs:isDefinedBy	:;
 	rdfs:label 			"?this";
 	rdfs:range  		:Term;
+	rdfs:domain			:Pattern;
 .
-
 :optional
 	a					owl:ObjectProperty;
-	a					rdfs:subPropertyOf;
 	rdfs:isDefinedBy	:;
 	rdfs:label 			"optional";
-	rdfs:range  		xsd:boolean;
+	rdfs:domain			:Query;
+	rdfs:range  		:Pattern;
 .
 
+:learn
+	a					owl:ObjectProperty;
+	rdfs:isDefinedBy	:;
+	rdfs:label 			"?that";
+	rdfs:range  		:Inference;
+	rdfs:domain			:Intuition;
+.
+:when
+	a					owl:ObjectProperty;
+	rdfs:isDefinedBy	:;
+	rdfs:label 			"?that";
+	rdfs:range  		:Query;
+	rdfs:domain			:Intuition;
+.

@@ -3,6 +3,7 @@ package com.scorpio4.iq
 import com.scorpio4.assets.Asset
 import com.scorpio4.iq.exec.Templating
 import com.scorpio4.test.Scorpio4TestCase
+import com.scorpio4.vocab.COMMON
 
 /**
  * Scorpio4 (c) 2014
@@ -17,7 +18,7 @@ class PublishingTest extends Scorpio4TestCase {
 
     void testWith() {
         def publisher = new Templating();
-	    Asset template = new Asset("hello \${greeting}");
+	    Asset template = new Asset("urn:test", "hello \${greeting}", COMMON.MIME_PLAIN);
         def future = publisher.execute(template, [ "greeting": "world"])
         assert future!=null;
         Writable writable = future.get();

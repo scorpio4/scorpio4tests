@@ -21,8 +21,8 @@ class SelectSPARQLTest {
     void testASQ() {
         ASQ asq = new BasicASQ(baseURI);
         asq.where("?this", CORE.A, CORE.RDFS+"Class");
-        assert asq.getClauses() != null;
-        assert asq.getClauses().size() == 1;
+        assert asq.getPatterns() != null;
+        assert asq.getPatterns().size() == 1;
         assert asq.getBindings().size() == 1;
     }
 
@@ -33,8 +33,10 @@ class SelectSPARQLTest {
         assert asq.getBindings().size() == 1;
 
         println "ASQ: ${asq}"
-        SelectSPARQL sqb = new SelectSPARQL(asq);
-        println "SPARQL: "+sqb;
+	    SelectSPARQL sparql = new SelectSPARQL(asq);
+	    assert sparql != null;
+	    assert sparql.toString().contains("SELECT")
+	    println "SPARQL: "+sparql;
     }
 
     @Test
@@ -44,8 +46,11 @@ class SelectSPARQLTest {
         asq.where("?this", CORE.LABEL.stringValue(), "?label", true);
         assert asq.getBindings().size() == 2;
         println "ASQ: ${asq}"
-        SelectSPARQL sqb = new SelectSPARQL(asq);
-        println "SPARQL: "+sqb;
+	    SelectSPARQL sparql = new SelectSPARQL(asq);
+	    assert sparql != null;
+	    assert sparql.toString().contains("SELECT")
+	    assert sparql.toString().contains("OPTIONAL")
+	    println "SPARQL: "+sparql;
     }
 
     @Test
@@ -58,8 +63,11 @@ class SelectSPARQLTest {
         assert asq.getBindings().size() == 3;
         assert asq.getFunctions().size() == 1;
 
-        SelectSPARQL sqb = new SelectSPARQL(asq);
-        println "SPARQL: "+sqb;
+	    SelectSPARQL sparql = new SelectSPARQL(asq);
+	    assert sparql != null;
+	    assert sparql.toString().contains("SELECT")
+	    assert sparql.toString().contains("BOUND")
+	    println "SPARQL: "+sparql;
     }
 
     @Test
@@ -72,8 +80,11 @@ class SelectSPARQLTest {
         assert asq.getBindings().size() == 2;
         assert asq.getFunctions().size() == 1;
 
-        SelectSPARQL sqb = new SelectSPARQL(asq);
-        println "SPARQL: "+sqb;
+        SelectSPARQL sparql = new SelectSPARQL(asq);
+	    assert sparql != null;
+	    assert sparql.toString().contains("SELECT")
+	    assert sparql.toString().contains("BOUND")
+        println "SPARQL: "+sparql;
     }
 
 
@@ -88,8 +99,10 @@ class SelectSPARQLTest {
         ASQ learn = new BasicASQ(baseURI);
         learn.where("?this", CORE.LABEL.stringValue(), "?this");
 
-        SelectSPARQL sqb = new SelectSPARQL(asq, learn);
-        println "SPARQL: "+sqb;
+        SelectSPARQL sparql = new ConstructSPARQL(asq, learn);
+	    assert sparql != null;
+	    assert sparql.toString().contains("CONSTRUCT")
+        println "SPARQL: "+sparql;
     }
 
 }

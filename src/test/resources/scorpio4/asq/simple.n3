@@ -1,20 +1,59 @@
+# W3C - RDF & RDFS
 @prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eg: 		<http://example.org/>.
 
+# Scorpio4 Active Vocabularies
 @prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
 @prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
 @prefix asq: 		<http://scorpio4.com/vocab/v1/asq/>.
 @prefix core: 		<http://scorpio4.com/vocab/v1/>.
 
+
+# In ASQ the namespace is significant.
+# Any URI scoped to the namespace of the query is consider part of the solution.
+#
 @prefix : 			<urn:scorpio4tests:asq:simple:>.
 
-# Query to find all asq:Queries.
-# It should at least find itself.
+:	a				asq:Query, eg:Example;
+	rdfs:label		"Simple ASQ Example";
+	rdfs:comment	"Query to find all Example Queries, so it should at least find itself.";
 
-:		a		asq:Query;
+	# returns a distinct collection of solutions. Each solution is a set of named values
+	asq:question ( :this :label :comment );
+
 	asq:where [
 		asq:this	:this;
 		asq:has		rdf:type;
 		asq:that	asq:Query;
 	];
-.
+	asq:where [
+		asq:this	:this;
+		asq:has		rdf:type;
+		asq:that	eg:Example;
+	];
+	asq:optional [
+		asq:this	:this;
+		asq:has		rdfs:label;
+		asq:that	:label;
+		asq:where [
+			asq:this	:this;
+			asq:has		rdfs:comment;
+			asq:that	:comment;
+		];
+	];
 
+# And here is the SPARQL
+	core:hasAsset """
+# @namespaces
+SELECT DISTINCT ?this ?label ?comment
+WHERE {
+	?this a asq:Query .
+	?this a eg:Example .
+	OPTIONAL {
+		?this rdfs:label ?label .
+		?this rdfs:comment ?comment .
+	}
+}
+""";
+.

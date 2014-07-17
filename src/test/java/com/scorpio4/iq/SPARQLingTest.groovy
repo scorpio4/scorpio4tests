@@ -17,7 +17,7 @@ class SPARQLingTest extends Scorpio4TestCase {
     void testWith() {
 	    initialize();
         def sparqling = new SPARQLing(connection);
-	    Asset query = new Asset("SELECT DISTINCT ?o WHERE {?s ?p ?o}", COMMON.MIME_SPARQL);
+	    Asset query = new Asset("urn:test", "SELECT DISTINCT ?o WHERE {?s ?p ?o}", COMMON.MIME_SPARQL);
         def future = sparqling.execute(query, ["hello": "world"])
         assert future!=null;
         def result = future.get();
