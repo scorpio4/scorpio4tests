@@ -1,51 +1,57 @@
 package com.scorpio4.vendor.spring
 
-import com.scorpio4.test.Scorpio4TestCase
-import groovy.transform.Field
-import org.openrdf.repository.RepositoryConnection
-import org.openrdf.repository.sail.SailRepository
-import org.openrdf.rio.RDFFormat
-import org.openrdf.sail.inferencer.fc.ForwardChainingRDFSInferencer
-import org.openrdf.sail.memory.MemoryStore
+import com.scorpio4.runtime.MockEngine
 import org.springframework.beans.factory.config.BeanDefinition
 import org.springframework.context.ApplicationContext
 import org.springframework.context.support.GenericApplicationContext
-
 /**
  * Scorpio (c) 2014
  * Module: com.scorpio4.vendor.spring
- * User  : lee
+ * @author lee
  * Date  : 30/06/2014
  * Time  : 11:33 PM
  *
  *
  */
-class RDFBeanDefinitionReaderTest extends Scorpio4TestCase {
+class RDFBeanDefinitionReaderTest extends GroovyTestCase {
 	def HELLO_WORLD = "com/scorpio4/vendor/spring/HelloWorld.n3";
 
 	void testRegister() {
-		provision(HELLO_WORLD);
+		MockEngine engine = new MockEngine();
+		engine.provision(HELLO_WORLD);
+		def connection = engine.getRepository().getConnection();
+
 		ApplicationContext applicationContext = new GenericApplicationContext();
 
 		RDFBeanDefinitionReader beanie = new RDFBeanDefinitionReader(connection, applicationContext);
 		assert 0 < beanie.loadBeanDefinitions("bean:com.scorpio4.vendor.spring.HelloWorld");
 		BeanDefinition beanDef = beanie.beanFactory.getBeanDefinition("bean:com.scorpio4.vendor.spring.HelloWorld");
 		println "Registered: "+beanDef;
-		finalize()
+
+		connection.close();
+		engine.stop();
 	}
 
 	void testDefineBean() {
-		provision(HELLO_WORLD);
+		MockEngine engine = new MockEngine();
+		engine.provision(HELLO_WORLD);
+		def connection = engine.getRepository().getConnection();
+
 		ApplicationContext applicationContext = new GenericApplicationContext();
 
 		RDFBeanDefinitionReader beanie = new RDFBeanDefinitionReader(connection, applicationContext);
 		BeanDefinition beanDef = beanie.defineBean("com.scorpio4.vendor.spring.HelloWorld");
 		println "Defined: "+beanDef;
-		finalize()
+
+		connection.close();
+		engine.stop();
 	}
 
 	void testLoadDefinitions() {
-		provision(HELLO_WORLD);
+		MockEngine engine = new MockEngine();
+		engine.provision(HELLO_WORLD);
+		def connection = engine.getRepository().getConnection();
+
 		ApplicationContext applicationContext = new GenericApplicationContext();
 		RDFBeanDefinitionReader beanie = new RDFBeanDefinitionReader(connection, applicationContext);
 		def loaded = beanie.loadBeanDefinitions("bean:com.scorpio4.vendor.spring.HelloWorld");
@@ -56,6 +62,8 @@ class RDFBeanDefinitionReaderTest extends Scorpio4TestCase {
 		assert com.scorpio4.vendor.spring.HelloWorld.isInstance(bean);
 		assert bean.isWelcomed();
 		println "Hello Bean: "+bean;
-		finalize()
+
+		connection.close();
+		engine.stop();
 	}
 }

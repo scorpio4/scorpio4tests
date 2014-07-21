@@ -6,7 +6,7 @@ import javax.sql.DataSource
 /**
  * scorpio4-oss (c) 2014
  * Module: com.scorpio4.jdbc
- * User  : lee
+ * @author lee
  * Date  : 6/07/2014
  * Time  : 4:09 AM
  *
@@ -21,8 +21,9 @@ class JDBCFLOTest extends GroovyTestCase {
 
 		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);
 		activeVocabularies.startAndWait();
-//		activeVocabularies.activate("direct:test:jdbc:install", null)
-		Thread.sleep(20000);
+
+		activeVocabularies.stop();
+		engine.stop();
 	}
 
 	void testBeanRegistry() {
@@ -30,7 +31,7 @@ class JDBCFLOTest extends GroovyTestCase {
 		engine.provision("scorpio4/flo/jdbc.n3");
 
 		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);
-//		activeVocabularies.start();
+		activeVocabularies.start();
 
 		String jdbcBeanURN = "urn:scorpio4tests:hsqldb"
 		def bean2 = engine.getRegistry().getBean(jdbcBeanURN);
@@ -41,5 +42,8 @@ class JDBCFLOTest extends GroovyTestCase {
 		def bean1 = engine.getRegistry().getBean(jdbcBeanURI);
 		assert bean1!=null;
 		assert bean1 instanceof DataSource
+
+		activeVocabularies.stop();
+		engine.stop();
 	}
 }

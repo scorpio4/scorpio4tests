@@ -11,20 +11,20 @@
 @prefix : 			<urn:com.scorpio4:application:com.scorpio4:ux:user:>.
 
 <urn:com.scorpio4:application:com.scorpio4:>
-	ux:workspace		:listUsers;
+	ux:workspace		:listusers;
 .
 
 #
-# User
+# user
 #
-:listUsers
+:listusers
 
 	ux:id			"users";
-	rdfs:label	    "All Users";
+	rdfs:label	    "All users";
 
     ux:type         ux:Grid;
     ux:model        <urn:com.scorpio4:application:com.scorpio4:facts:users>;
-	ux:renders      :listUsersTemplate;
+	ux:renders      :listusersTemplate;
 
 	ux:field        :this;
 	ux:field        :label;
@@ -38,12 +38,12 @@
 :this
 	rdfs:label		"?this";
 	rdfs:comment	"Identity";
-	ux:field        <urn:com.scorpio4:application:com.scorpio4:asq:listUsers:this>;
+	ux:field        <urn:com.scorpio4:application:com.scorpio4:asq:listusers:this>;
 .
 :label
 	rdfs:label		"?label";
 	rdfs:comment	"Label";
-	ux:field        <urn:com.scorpio4:application:com.scorpio4:asq:listUsers:label>;
+	ux:field        <urn:com.scorpio4:application:com.scorpio4:asq:listusers:label>;
 .
 
 

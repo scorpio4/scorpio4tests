@@ -1,5 +1,5 @@
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
 
 # Declare initial FLOs for deploy
 

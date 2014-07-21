@@ -6,7 +6,7 @@ import com.scorpio4.runtime.MockEngine
 /**
  * scorpio4-oss (c) 2014
  * Module: com.scorpio4.flo.self
- * User  : lee
+ * @author lee
  * Date  : 15/07/2014
  * Time  : 9:18 AM
  *
@@ -22,10 +22,12 @@ class TemplateTest extends GroovyTestCase {
 		activeVocabularies.startAndWait();
 		def activated = activeVocabularies.activate("direct:flo:self:template", null);
 		println "Template: "+activated
-		Thread.sleep(20000);
+
+		activeVocabularies.stop()
+		engine.stop();
 	}
 
 	public void testRouteCamel() throws Exception {
 
 	}
-	}
+}

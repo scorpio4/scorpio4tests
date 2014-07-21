@@ -13,21 +13,18 @@ import javax.ws.rs.core.UriInfo;
 /**
  * scorpio4-oss (c) 2014
  * Module: com.scorpio4.test
- * User  : lee
+ * @author lee
  * Date  : 14/07/2014
  * Time  : 7:00 PM
  */
 
 @Path("/test/jaxrs/{assetURI}")
-public class JAXRS {
+public class JAXRS  {
 	private static final Logger log = LoggerFactory.getLogger(JAXRS.class);
-
-	public JAXRS() {
-	}
 
 	@GET
 	public Response get(@PathParam("assetURI") final String assetURI, @Context UriInfo uriInfo) {
-		log.warn("JAXRS: "+assetURI+" -> "+uriInfo);
+		log.warn("JAXRS: "+assetURI+" -> "+uriInfo.getRequestUri());
 		return Response.ok("hello: "+assetURI).build();
 	}
 

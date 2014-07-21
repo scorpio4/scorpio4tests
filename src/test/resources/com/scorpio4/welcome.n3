@@ -1,4 +1,4 @@
-@prefix com.scorpio4: <http://scorpio4.com/vocab/v1/> .
+@prefix com.scorpio4: <http://scorpio4.com/v1/vocab/> .
 
 <urn:FactTools:>
     a                   com.scorpio4:Instance;

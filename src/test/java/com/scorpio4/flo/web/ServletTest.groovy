@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * scorpio4-oss (c) 2014
  * Module: com.scorpio4.flo.self
- * User  : lee
+ * @author lee
  * Date  : 14/07/2014
  * Time  : 2:46 AM
  */
@@ -21,5 +21,8 @@ public class ServletTest extends GroovyTestCase {
 		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);
 		activeVocabularies.startAndWait();
 		Thread.sleep(10000);
+
+		activeVocabularies.stop()
+		engine.stop();
 	}
 }

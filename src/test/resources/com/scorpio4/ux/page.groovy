@@ -5,7 +5,7 @@ import com.scorpio4.oops.IQException
 /**
  * scorpio4 (c) 2013
  * Module: scorpio4.ux
- * User  : lee
+ * @author lee
  * Date  : 28/11/2013
  * Time  : 11:10 PM
  *

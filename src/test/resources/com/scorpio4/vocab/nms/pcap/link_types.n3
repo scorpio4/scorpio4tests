@@ -207,13 +207,13 @@ pcap:LinkType_147
     a         pcap:LinkType;
     rdfs:label "PRIVATE";
     rdfs:comment "Reserved for private use";
-    pcap:dlt "USER0-DLT_USER15";
+    pcap:dlt "user0-DLT_user15";
 .
 #pcap:LinkType_147-162
 #    a         pcap:LinkType;
 #    rdfs:label "PRIVATE";
 #    rdfs:comment "Reserved for private use";
-#    pcap:dlt "USER0-DLT_USER15";
+#    pcap:dlt "user0-DLT_user15";
 #.
 
 pcap:LinkType_163

@@ -1,9 +1,9 @@
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
-@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
 <urn:scorpio4tests:>
-	flo:from			<direct:flo:sparql>;
+	flo:from			<direct:flo:self:sparql>;
 .
 
 # Declare a FLO pipeline
@@ -11,10 +11,10 @@
 # 2. execute SPARQL query using Engine's default repository
 # 3. save the result into the ./temp.test/ directory
 
-<direct:flo:sparql>	flo:to (
-	<self:asset:urn:scorpio4tests:pipeline:sparql>
-	<sparql:self?outputType=xml>
-	<file://temp.test/>
+<direct:flo:self:sparql>	flo:to (
+	<self:asset:urn:scorpio4tests:flo:sparql>
+	<sparql:select:self?outputType=json>
+	<file://temp.test/flo/self/sparql/>
 ).
 
 # Define the SPARQL query as named Asset

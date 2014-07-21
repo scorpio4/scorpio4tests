@@ -4,10 +4,10 @@
 @prefix eg: 		<http://example.org/>.
 
 # Scorpio4 Active Vocabularies
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
-@prefix asq: 		<http://scorpio4.com/vocab/v1/asq/>.
-@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix asq: 		<http://scorpio4.com/v1/vocab/asq/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
 
 # In ASQ the namespace is significant.

@@ -1910,75 +1910,75 @@ schema:UnionClasses
   rdfs:label "Union classes"^^xsd:string ;
   rdfs:subClassOf schema:Thing ;
 .
-schema:UserBlocks
+schema:userBlocks
   rdf:type rdfs:Class ;
-  rdfs:comment "User interaction: Block this content."@en ;
-  rdfs:isDefinedBy schema:UserBlocks ;
-  rdfs:label "User Blocks"@en ;
-  rdfs:subClassOf schema:UserInteraction ;
+  rdfs:comment "user interaction: Block this content."@en ;
+  rdfs:isDefinedBy schema:userBlocks ;
+  rdfs:label "user Blocks"@en ;
+  rdfs:subClassOf schema:userInteraction ;
 .
-schema:UserCheckins
+schema:userCheckins
   rdf:type rdfs:Class ;
-  rdfs:comment "User interaction: Check-in at a place."@en ;
-  rdfs:isDefinedBy schema:UserCheckins ;
-  rdfs:label "User Checkins"@en ;
-  rdfs:subClassOf schema:UserInteraction ;
+  rdfs:comment "user interaction: Check-in at a place."@en ;
+  rdfs:isDefinedBy schema:userCheckins ;
+  rdfs:label "user Checkins"@en ;
+  rdfs:subClassOf schema:userInteraction ;
 .
-schema:UserComments
+schema:userComments
   rdf:type rdfs:Class ;
-  rdfs:comment "User interaction: A comment about an item."@en ;
-  rdfs:isDefinedBy schema:UserComments ;
-  rdfs:label "User Comments"@en ;
-  rdfs:subClassOf schema:UserInteraction ;
+  rdfs:comment "user interaction: A comment about an item."@en ;
+  rdfs:isDefinedBy schema:userComments ;
+  rdfs:label "user Comments"@en ;
+  rdfs:subClassOf schema:userInteraction ;
 .
-schema:UserDownloads
+schema:userDownloads
   rdf:type rdfs:Class ;
-  rdfs:comment "User interaction: Download of an item."@en ;
-  rdfs:isDefinedBy schema:UserDownloads ;
-  rdfs:label "User Downloads"@en ;
-  rdfs:subClassOf schema:UserInteraction ;
+  rdfs:comment "user interaction: Download of an item."@en ;
+  rdfs:isDefinedBy schema:userDownloads ;
+  rdfs:label "user Downloads"@en ;
+  rdfs:subClassOf schema:userInteraction ;
 .
-schema:UserInteraction
+schema:userInteraction
   rdf:type rdfs:Class ;
   rdfs:comment "A user interacting with a page"@en ;
-  rdfs:isDefinedBy schema:UserInteraction ;
-  rdfs:label "User Interaction"@en ;
+  rdfs:isDefinedBy schema:userInteraction ;
+  rdfs:label "user Interaction"@en ;
   rdfs:subClassOf schema:Event ;
 .
-schema:UserLikes
+schema:userLikes
   rdf:type rdfs:Class ;
-  rdfs:comment "User interaction: Like an item."@en ;
-  rdfs:isDefinedBy schema:UserLikes ;
-  rdfs:label "User Likes"@en ;
-  rdfs:subClassOf schema:UserInteraction ;
+  rdfs:comment "user interaction: Like an item."@en ;
+  rdfs:isDefinedBy schema:userLikes ;
+  rdfs:label "user Likes"@en ;
+  rdfs:subClassOf schema:userInteraction ;
 .
-schema:UserPageVisits
+schema:userPageVisits
   rdf:type rdfs:Class ;
-  rdfs:comment "User interaction: Visit to a web page."@en ;
-  rdfs:isDefinedBy schema:UserPageVisits ;
-  rdfs:label "User Page Visits"@en ;
-  rdfs:subClassOf schema:UserInteraction ;
+  rdfs:comment "user interaction: Visit to a web page."@en ;
+  rdfs:isDefinedBy schema:userPageVisits ;
+  rdfs:label "user Page Visits"@en ;
+  rdfs:subClassOf schema:userInteraction ;
 .
-schema:UserPlays
+schema:userPlays
   rdf:type rdfs:Class ;
-  rdfs:comment "User interaction: Play count of an item, for example a video or a song."@en ;
-  rdfs:isDefinedBy schema:UserPlays ;
-  rdfs:label "User Plays"@en ;
-  rdfs:subClassOf schema:UserInteraction ;
+  rdfs:comment "user interaction: Play count of an item, for example a video or a song."@en ;
+  rdfs:isDefinedBy schema:userPlays ;
+  rdfs:label "user Plays"@en ;
+  rdfs:subClassOf schema:userInteraction ;
 .
-schema:UserPlusOnes
+schema:userPlusOnes
   rdf:type rdfs:Class ;
-  rdfs:comment "User interaction: +1."@en ;
-  rdfs:isDefinedBy schema:UserPlusOnes ;
-  rdfs:label "User Plus Ones"@en ;
-  rdfs:subClassOf schema:UserInteraction ;
+  rdfs:comment "user interaction: +1."@en ;
+  rdfs:isDefinedBy schema:userPlusOnes ;
+  rdfs:label "user Plus Ones"@en ;
+  rdfs:subClassOf schema:userInteraction ;
 .
-schema:UserTweets
+schema:userTweets
   rdf:type rdfs:Class ;
-  rdfs:comment "User interaction: Tweets."@en ;
-  rdfs:isDefinedBy schema:UserTweets ;
-  rdfs:label "User Tweets"@en ;
-  rdfs:subClassOf schema:UserInteraction ;
+  rdfs:comment "user interaction: Tweets."@en ;
+  rdfs:isDefinedBy schema:userTweets ;
+  rdfs:label "user Tweets"@en ;
+  rdfs:subClassOf schema:userInteraction ;
 .
 schema:VeterinaryCare
   rdf:type rdfs:Class ;
@@ -2859,7 +2859,7 @@ schema:ingredients
 .
 schema:interactionCount
   rdf:type rdf:Property ;
-  rdfs:comment "A count of a specific user interactions with this item—for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction."@en ;
+  rdfs:comment "A count of a specific user interactions with this item—for example, 20 userLikes, 5 userComments, or 300 userDownloads. The user interaction type should be one of the sub types of userInteraction."@en ;
   rdfs:domain [
       owl:unionOf (
           schema:Organization
@@ -3593,7 +3593,7 @@ schema:streetAddress
 .
 schema:subEvents
   rdf:type rdf:Property ;
-  rdfs:comment "Events that are a part of this event. For example, a conference event includes many presentations, each are subEvents of the conference."@en ;
+  rdfs:comment "Events that are a part of this event. For example, a user event includes many presentations, each are subEvents of the user."@en ;
   rdfs:domain schema:Event ;
   rdfs:isDefinedBy schema:Event ;
   rdfs:label "Sub Events"@en ;

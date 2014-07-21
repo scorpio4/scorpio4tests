@@ -1,14 +1,10 @@
 package com.scorpio4.flo.web
 import com.scorpio4.iq.vocab.Scorpio4ActiveVocabularies
 import com.scorpio4.runtime.MockEngine
-import org.apache.cxf.jaxrs.JAXRSServiceImpl
-
-import javax.xml.namespace.QName
-
 /**
  * scorpio4-oss (c) 2014
  * Module: com.scorpio4.flo.self
- * User  : lee
+ * @author lee
  * Date  : 14/07/2014
  * Time  : 6:58 PM
  *
@@ -20,13 +16,25 @@ class JAXRSTest extends GroovyTestCase {
 		MockEngine engine = new MockEngine();
 		engine.provision("scorpio4/flo/web/jaxrs.n3", getClass().getClassLoader());
 
+		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);
+		activeVocabularies.startAndWait();
+
+		activeVocabularies.stop()
+		engine.stop()
+	}
+
+	public void testRequestResponse() {
+		MockEngine engine = new MockEngine();
+		engine.provision("scorpio4/flo/web/jaxrs.n3", getClass().getClassLoader());
 
 		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);
-
-		JAXRSServiceImpl service = new JAXRSServiceImpl("http://localhost:9090", new QName(engine.getIdentity()));
-		activeVocabularies.getCamelContext().addService(service);
-
 		activeVocabularies.startAndWait();
-		Thread.sleep(10000);
+
+		def activated = activeVocabularies.activate("direct:flo/web/jaxrs/request", null, String.class);
+		assert activated!=null;
+		assert activated == "woot hello: world";
+
+		activeVocabularies.stop()
+		engine.stop()
 	}
 }

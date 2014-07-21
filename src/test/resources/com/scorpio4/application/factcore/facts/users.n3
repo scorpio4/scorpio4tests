@@ -18,7 +18,7 @@
 
 :users
     a               fact:Model;
-    rdfs:label      "All Users";
+    rdfs:label      "All users";
     fact:from       <urn:com.scorpio4:application:com.scorpio4:finder:core>;
     fact:reader     <urn:com.scorpio4:application:com.scorpio4:facts:users:read>;
 .

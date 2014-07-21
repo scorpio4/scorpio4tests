@@ -2,7 +2,7 @@ package com.scorpio4.iq.capability.xmpp.command
 /**
  * Scorpio4 (c) 2013
  * Module: scorpio4.iq.capability.xmpp.command
- * User  : lee
+ * @author lee
  * Date  : 2/01/2014
  * Time  : 2:07 PM
  *

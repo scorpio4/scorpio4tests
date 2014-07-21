@@ -1,7 +1,7 @@
 @prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
 
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
 @prefix mime: 		<http://www.iana.org/assignments/media-types/>.
 
 <bean:org.hsqldb.jdbc.JDBCDataSource>	a	bean:Bean.

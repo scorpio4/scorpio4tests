@@ -7,7 +7,7 @@ import org.junit.Test
 /**
  * FactCore (c) 2013
  * Module: com.factcore.fact.query.sparql
- * User  : lee
+ * @author lee
  * Date  : 16/10/13
  * Time  : 8:10 PM
  * 

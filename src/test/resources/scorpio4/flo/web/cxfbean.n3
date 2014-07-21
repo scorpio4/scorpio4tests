@@ -1,6 +1,6 @@
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
-@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
 <urn:scorpio4tests:>
 	flo:from			<jetty:http://0.0.0.0:{httpPort}/flo/cxfbean>;

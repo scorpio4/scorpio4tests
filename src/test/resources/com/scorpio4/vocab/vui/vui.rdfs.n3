@@ -14,7 +14,7 @@
 	owl:versionInfo		"0.1";
 	rdfs:label			"VUI";
 	dc:title			"VUI vocabulary";
-	rdfs:comment		"Vocabulary for describing a Rich User Experience.";
+	rdfs:comment		"Vocabulary for describing a Rich user Experience.";
 	dc:created			"2013-01-30"^^xsd:date;
 	dc:modified			"2013-01-30"^^xsd:date;
 	dc:license 			<http://www.opendatacommons.org/licenses/pddl/1.0/>

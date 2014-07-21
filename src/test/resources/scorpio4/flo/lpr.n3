@@ -1,13 +1,13 @@
 # Scorpio4's namespaces
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
-@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
 # Declare the main FLO pipeline
 <direct:flo:lpr>	flo:to (
 
 # Print all files in the directory, then remove the files
-	[ flo:to <file://./temp.test/flo/lpr/> ]
+	[ flo:io <file://./temp.test/flo/lpr/> ]
 	[ flo:to <lpr:localhost/default> ]
 
 ).

@@ -16,7 +16,7 @@
 	owl:versionInfo		"0.1";
 	rdfs:label			"VUX";
 	dc:title			"VUX vocabulary";
-	rdfs:comment		"Vocabulary for describing a User Experience.";
+	rdfs:comment		"Vocabulary for describing a user Experience.";
 	dc:created			"2013-01-30"^^xsd:date;
 	dc:modified			"2013-01-30"^^xsd:date;
 	dc:license 			<http://www.opendatacommons.org/licenses/pddl/1.0/>
@@ -24,7 +24,7 @@
 
 
 :UX
-    rdfs:label      "User Experience";
+    rdfs:label      "user Experience";
     rdfs:comment    "A view, model and behaviour";
 	rdfs:isDefinedBy	:;
 .

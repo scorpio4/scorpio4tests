@@ -1,6 +1,6 @@
 @prefix hydra:		<http://www.w3.org/ns/hydra/core#>.
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
 @prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
 @prefix :			<urn:scorpio4tests:hydra:mock_api:>.
 

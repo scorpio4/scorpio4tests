@@ -1,6 +1,6 @@
 package com.scorpio4.vendor.sesame
 
-import com.scorpio4.test.Scorpio4TestCase
+
 import org.openrdf.repository.manager.RepositoryInfo
 
 /**
@@ -11,12 +11,13 @@ import org.openrdf.repository.manager.RepositoryInfo
  * 
  * This code does something useful
  */
-class IQRepositoryManagerIT extends Scorpio4TestCase {
+class IQRepositoryManagerIT extends GroovyTestCase {
 
 	void testCoreRepository() {
 		RepositoryManager crm = new RepositoryManager( "test", new URL("http://127.0.0.1:8080/openrdf-sesame/"), new File("/opt/scorpio4/Kernel.Internals"));
 		println "CRM: "+crm.getIdentity();
-		println "Core: "+crm.getCoreRepository();
+		assert crm.getIdentity()=="test";
+		crm.shutDown();
 	}
 
 	void testLocalRepository() {
@@ -27,6 +28,7 @@ class IQRepositoryManagerIT extends Scorpio4TestCase {
 			RepositoryInfo repositoryInfo = repos.get(i);
 			println "-> "+repositoryInfo.getId()+" @ "+repositoryInfo.getLocation();
 		}
+		crm.shutDown();
 	}
 
 }

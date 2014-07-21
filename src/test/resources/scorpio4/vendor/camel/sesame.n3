@@ -1,0 +1,22 @@
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
+
+<urn:scorpio4tests:>
+	flo:from			<direct:vendor/camel/sesame>;
+.
+
+<direct:vendor/camel/sesame>
+	flo:to (
+		[ flo:to 	<asset:urn:scorpio4tests:sparql01> ]
+		[ flo:to 	<sparql:self> ]
+		[ flo:log	"testing SPARQL" ]
+
+	);
+	a		core:Recipe;
+.
+
+
+<asset:urn:scorpio4tests:sparql01> core:hasAsset """
+SELECT ?this WHERE { ?this a core:Recipe }
+""".

@@ -1,19 +1,21 @@
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
-@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
 <urn:scorpio4tests:>
-	flo:from			<cxfrs:bean:urn:com.scorpio4.test.JAXRS>;
+	flo:from			<jetty:http://0.0.0.0:9000/flo/?matchOnUriPrefix=true>;
+	flo:from			<direct:flo/web/jaxrs/request>;
 .
 
-# Declare a FLO pipeline
-# 1. retrieve SPARQL query as a named Asset
-# 2. execute SPARQL query using Engine's default repository
-# 3. save the result into the ./temp.test/ directory
-
-<cxfrs:bean:urn:com.scorpio4.test.JAXRS>	flo:to (
-	<file://temp.test/jaxrs/>
+<jetty:http://0.0.0.0:9000/flo/?matchOnUriPrefix=true> flo:to (
+	[ flo:to <cxfbean:urn:com.scorpio4.test.JAXRS> ]
+	[ flo:body "woot ${body}" ]
 ).
+
+
 
 <urn:com.scorpio4.test.JAXRS> a <bean:com.scorpio4.test.JAXRS>.
 <bean:com.scorpio4.test.JAXRS> a bean:Bean.
+
+# Test the route by issuing an HTTP request
+<direct:flo/web/jaxrs/request>	flo:io <http://127.0.0.1:9000/flo/test/jaxrs/world>.

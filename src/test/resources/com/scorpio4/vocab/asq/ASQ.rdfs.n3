@@ -5,8 +5,8 @@
 @prefix eg:			<http://www.example.org/> .
 @prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
 
-@prefix asq: 		<http://scorpio4.com/vocab/v1/asq/>.
-@prefix : 			<http://scorpio4.com/vocab/v1/asq/>.
+@prefix asq: 		<http://scorpio4.com/v1/vocab/asq/>.
+@prefix : 			<http://scorpio4.com/v1/vocab/asq/>.
 
 #
 # Abstract Query Notation

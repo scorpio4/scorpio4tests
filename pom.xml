@@ -172,6 +172,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-http4</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
@@ -184,6 +190,20 @@
             <!--<version>3.3</version>-->
             <!--<scope>provided</scope>&lt;!&ndash; annotations are needed only to build the plugin &ndash;&gt;-->
         <!--</dependency>-->
+
+        <!-- XML/XSD to RDF/OWL (not in maven central - local install only)  -->
+        <dependency>
+            <groupId>tr.com.srdc</groupId>
+            <artifactId>ontmalizer</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- GIT experimental -->
+        <dependency>
+            <groupId>org.eclipse.jgit</groupId>
+            <artifactId>org.eclipse.jgit</artifactId>
+            <version>3.4.1.201406201815-r</version>
+        </dependency>
 
     </dependencies>
 

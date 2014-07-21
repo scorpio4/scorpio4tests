@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * scorpio4-oss (c) 2014
  * Module: com.scorpio4.flo.self
- * User  : lee
+ * @author lee
  * Date  : 14/07/2014
  * Time  : 2:46 AM
  */
@@ -20,7 +20,11 @@ public class SPARQLTest extends GroovyTestCase {
 
 		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);
 		activeVocabularies.startAndWait();
-		def deployed = activeVocabularies.activate("direct:sparql:test", null);
+		def deployed = activeVocabularies.activate("direct:flo:self:sparql", null);
 		println "Deployed: "+deployed.getClass()
 		Thread.sleep(1000);
-	}}
+		activeVocabularies.stop()
+		engine.stop()
+
+	}
+}

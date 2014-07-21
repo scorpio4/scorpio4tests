@@ -7,7 +7,7 @@ import groovy.util.GroovyTestCase;
 /**
  * scorpio4-oss (c) 2014
  * Module: com.scorpio4.iq.vocab
- * User  : lee
+ * @author lee
  * Date  : 9/07/2014
  * Time  : 8:54 PM
  */
@@ -18,7 +18,12 @@ public class HydraVocabularyTest extends GroovyTestCase {
 		engine.provision("scorpio4/hydra/mock_api.n3", HydraVocabulary.class.getClassLoader());
 		engine.provision("scorpio4/vocabs/hydra/hydra-cg.n3", COMMON.class.getClassLoader());
 		HydraVocabulary hydra = new HydraVocabulary(engine);
+		assert !hydra.isActive();
+		hydra.start();
 		assert hydra.isActive();
+
+		hydra.stop();
+		engine.stop();
 	}
 
 }

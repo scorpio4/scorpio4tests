@@ -15,9 +15,9 @@
 
 :	a					owl:Ontology;
 	owl:versionInfo		"0.1";
-	rdfs:label			"User";
-	dc:title			"User vocabulary";
-	rdfs:comment		"Vocabulary for describing Scorpio4 Users";
+	rdfs:label			"user";
+	dc:title			"user vocabulary";
+	rdfs:comment		"Vocabulary for describing Scorpio4 users";
 	dc:created			"2013-03-01"^^xsd:date;
 	dc:modified			"2013-03-01"^^xsd:date;
 	dc:license 			<http://www.opendatacommons.org/licenses/pddl/1.0/>
@@ -33,14 +33,14 @@
 :Group
 	a					rdfs:Class;
 	rdfs:label			"group";
-	rdfs:comment 		"A User Group";
+	rdfs:comment 		"A user Group";
 	rdfs:isDefinedBy	:;
 .
 
 :Role
 	a					rdfs:Class;
 	rdfs:label			"role";
-	rdfs:comment 		"A User Role";
+	rdfs:comment 		"A user Role";
 	rdfs:isDefinedBy	:;
 .
 

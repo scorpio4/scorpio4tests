@@ -16,7 +16,7 @@
 @prefix : 			<urn:com.scorpio4:example:user:>.
 
 :example
-	rdfs:label		"Example User";
+	rdfs:label		"Example user";
 	rdfs:comment	"I am an example user";
 	user:username	"example";
 	user:password	"1a79a4d60de6718e8e5b326e338ae533"; # example

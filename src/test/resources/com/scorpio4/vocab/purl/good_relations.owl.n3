@@ -24,7 +24,7 @@ Note: The base URI of GoodRelations is http://purl.org/goodrelations/v1. Please 
 
 If you use GoodRelations for scientific purposes, please cite our paper:
 
-Hepp, Martin: GoodRelations: An Ontology for Describing Products and Services Offers on the Web, Proceedings of the 16th International Conference on Knowledge Engineering and Knowledge Management (EKAW2008), September 29 - October 3, 2008, Acitrezza, Italy, Springer LNCS, Vol. 5268, pp. 332-347.
+Hepp, Martin: GoodRelations: An Ontology for Describing Products and Services Offers on the Web, Proceedings of the 16th International user on Knowledge Engineering and Knowledge Management (EKAW2008), September 29 - October 3, 2008, Acitrezza, Italy, Springer LNCS, Vol. 5268, pp. 332-347.
 gr:hasGlobalLocationNumber a owl:DatatypeProperty ;
 	rdfs:domain _:node16gmh88vix75 .
 
@@ -1564,7 +1564,7 @@ gr:QuantitativeValueInteger a owl:Class ;
 
 Example: A seating capacity between 1 and 8 persons.
 
-Note: Users must keep in mind that ranges in here mean that ALL possible values in this interval are covered. (Sometimes, the actual commitment may be less than that: \"We sell cars from 2 - 12 seats\" does often not really mean that they have cars with 2,3,4,...12 seats.). Someone renting out two types of rowing boats, one that fits for 1 or 2 people, and another that must be operated by 4 people cannot claim to rent boats with a seating capacity between 1 and 4 people. He or she is offering two boat types for 1-2 and 4 persons."""@en ;
+Note: users must keep in mind that ranges in here mean that ALL possible values in this interval are covered. (Sometimes, the actual commitment may be less than that: \"We sell cars from 2 - 12 seats\" does often not really mean that they have cars with 2,3,4,...12 seats.). Someone renting out two types of rowing boats, one that fits for 1 or 2 people, and another that must be operated by 4 people cannot claim to rent boats with a seating capacity between 1 and 4 people. He or she is offering two boat types for 1-2 and 4 persons."""@en ;
 	rdfs:label "Quantitative value integer"@en .
 
 gr:SomeItems a owl:Class ;

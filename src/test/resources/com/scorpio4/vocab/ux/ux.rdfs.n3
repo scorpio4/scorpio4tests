@@ -13,8 +13,8 @@
 :	a					owl:Ontology;
 	owl:versionInfo		"0.1";
 	rdfs:label			"UX";
-	dc:title			"User Experience vocabulary";
-	rdfs:comment		"Vocabulary for describing a User Experience.";
+	dc:title			"user Experience vocabulary";
+	rdfs:comment		"Vocabulary for describing a user Experience.";
 	dc:created			"2013-01-30"^^xsd:date;
 	dc:modified			"2013-01-30"^^xsd:date;
 	dc:license 			<http://www.opendatacommons.org/licenses/pddl/1.0/>

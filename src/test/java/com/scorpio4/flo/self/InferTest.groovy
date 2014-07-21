@@ -7,7 +7,7 @@ import org.junit.Test
 /**
  * scorpio4-oss (c) 2014
  * Module: com.scorpio4.flo.self
- * User  : lee
+ * @author lee
  * Date  : 15/07/2014
  * Time  : 9:18 AM
  *
@@ -25,6 +25,9 @@ class InferTest extends GroovyTestCase {
 //		def deployed = activeVocabularies.activate("direct:test", null);
 //		println "Deployed: "+deployed
 		Thread.sleep(10000);
+
+		activeVocabularies.stop()
+		engine.stop()
 	}
 
 }

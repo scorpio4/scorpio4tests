@@ -6,9 +6,9 @@
 #
 
 # Scorpio4's namespaces
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
-@prefix core: 		<http://scorpio4.com/vocab/v1/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
 # Declare the main FLO pipeline
 <direct:flo:self:template>	flo:to (
@@ -22,9 +22,12 @@
 # Feed the results into an (HTML) template (urn:scorpio4tests:flo:self:template), defined below
 	[ flo:to <self:template:urn:scorpio4tests:flo:self:template>]
 
+# Feed the bpdy into an (HTML) wrapper (urn:scorpio4tests:flo:self:skin), defined below
+	[ flo:to <self:template:urn:scorpio4tests:flo:self:skin>]
+
 # Save the result into the ./temp.test/ directory
 # When called via the API, this is redundant, but it could be adapted in an audit trail.
-	[ flo:to <file://temp.test/flo/self/template/> ]
+	[ flo:io <file://temp.test/flo/self/template/> ]
 ).
 
 # Define the HTML template as a core:Asset
@@ -32,14 +35,20 @@
 # The .html of the file extension will be used deduce the Content-Type
 <urn:scorpio4tests:flo:self:template>
 	core:hasAsset			"""
-<html>
-<body>
 <ul>
 <% body.each {
 		print "<li>${it.to}</li>"
 	}
 %>
 </ul>
+"""^^<http://www.iana.org/assignments/media-types/application/x-groovy>. # it's a groovy template. or a broken bean.
+
+# The template that will wrap style our results
+<urn:scorpio4tests:flo:self:skin>
+	core:hasAsset			"""
+<html>
+<body>
+<section>${body}</section>
 </body>
 </html>
 """^^<http://www.iana.org/assignments/media-types/application/x-groovy>. # it's a groovy template. or a broken bean.

@@ -60,7 +60,7 @@
             vui:model       <urn:my:model>;
         ];
         vui:contains [
-            vui:asa         vui:UserProfile;
+            vui:asa         vui:userProfile;
             vui:caption     "v2 p2";
             vui:description "V2 P2";
        ];

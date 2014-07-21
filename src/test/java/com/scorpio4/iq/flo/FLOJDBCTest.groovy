@@ -1,17 +1,17 @@
 package com.scorpio4.iq.flo
 //import com.scorpio4.iq.FLOVocabulary
 //import com.scorpio4.iq.ActiveBeansVocabulary
-import com.scorpio4.test.Scorpio4TestCase
+
 /**
  * Scorpio4 (c) 2014
  * Module: com.scorpio4.iq
- * User  : lee
+ * @author lee
  * Date  : 17/06/2014
  * Time  : 9:44 PM
  *
  *
  */
-public class FLOJDBCTest extends Scorpio4TestCase {
+public class FLOJDBCTest {
 
 //	public void testSimpleFLO() {
 //		MockEngine engine = new MockEngine();

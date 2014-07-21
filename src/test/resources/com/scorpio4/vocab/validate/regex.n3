@@ -65,7 +65,7 @@
 	rdfs:comment 		"Used to check if a value is numeric (including decimal)";
 	:pattern 			"^(\\d{4}-){3}\\d{4}$|^(\\d{4} ){3}\\d{4}$|^\\d{16}$";
 	dc:link 			<http://regexlib.com/REDetails.aspx?regexp_id=529>;
-	dc:creator 			<http://regexlib.com/UserPatterns.aspx?authorId=25077cbf-d24a-4202-8b29-00ce9db91ebc>;
+	dc:creator 			<http://regexlib.com/userPatterns.aspx?authorId=25077cbf-d24a-4202-8b29-00ce9db91ebc>;
 .
 
 :credit_card_simple
@@ -74,7 +74,7 @@
 	rdfs:comment 		"Used to validate Credit Card numbers, Checks if it contains 16 numbers in groups of 4 separated by -, ,or nothing";
 	:pattern 			"^(\\d{4}-){3}\\d{4}$|^(\\d{4} ){3}\\d{4}$|^\\d{16}$";
 	dc:link 			<http://regexlib.com/REDetails.aspx?regexp_id=529>;
-	dc:creator 			<http://regexlib.com/UserPatterns.aspx?authorId=25077cbf-d24a-4202-8b29-00ce9db91ebc>;
+	dc:creator 			<http://regexlib.com/userPatterns.aspx?authorId=25077cbf-d24a-4202-8b29-00ce9db91ebc>;
 .
 
 :alphaumeric
@@ -83,7 +83,7 @@
 	:pattern 			"^[a-zA-Z0-9]+$";
 	rdfs:comment 		"Checks if value contains only lower or uppercase letters or numbers.";
 	dc:link 			<http://regexlib.com/REDetails.aspx?regexp_id=529>;
-	dc:creator 			<http://regexlib.com/UserPatterns.aspx?authorId=25077cbf-d24a-4202-8b29-00ce9db91ebc>;
+	dc:creator 			<http://regexlib.com/userPatterns.aspx?authorId=25077cbf-d24a-4202-8b29-00ce9db91ebc>;
 .
 
 :telephone
@@ -92,7 +92,7 @@
 	:pattern 			"^(?:(?:[\\+]?(?<CountryCode>[\\d]{1,3}(?:[ ]+|[\\-.])))?[(]?(?<AreaCode>[\\d]{3})[\\-/)]?(?:[ ]+)?)?(?<Number>[a-zA-Z2-9][a-zA-Z0-9 \\-.]{6,})(?:(?:[ ]+|[xX]|(i:ext[\\.]?)){1,2}(?<Ext>[\\d]{1,5}))?$";
 	rdfs:comment 		"This allows the formatting of most phone numbers. eg: 1-800-DISCOVER | (610) 310-5555 x5555 | 533-1123";
 	dc:link 			<http://regexlib.com/REDetails.aspx?regexp_id=688>;
-	dc:creator 			<http://regexlib.com/UserPatterns.aspx?authorId=e7f8a3ee-b325-405a-a13a-58f44b002aa6>;
+	dc:creator 			<http://regexlib.com/userPatterns.aspx?authorId=e7f8a3ee-b325-405a-a13a-58f44b002aa6>;
 .
 
 :usa_telephone
@@ -101,7 +101,7 @@
 	:pattern 			"^(?:(?:[\\+]?(?<CountryCode>[\\d]{1,3}(?:[ ]+|[\\-.])))?[(]?(?<AreaCode>[\\d]{3})[\\-/)]?(?:[ ]+)?)?(?<Number>[a-zA-Z2-9][a-zA-Z0-9 \\-.]{6,})(?:(?:[ ]+|[xX]|(i:ext[\\.]?)){1,2}(?<Ext>[\\d]{1,5}))?$";
 	rdfs:comment 		"This allows the formatting of most phone numbers. eg: 1-800-DISCOVER | (610) 310-5555 x5555 | 533-1123";
 	dc:link 			<http://regexlib.com/REDetails.aspx?regexp_id=688>;
-	dc:creator 			<http://regexlib.com/UserPatterns.aspx?authorId=e7f8a3ee-b325-405a-a13a-58f44b002aa6>;
+	dc:creator 			<http://regexlib.com/userPatterns.aspx?authorId=e7f8a3ee-b325-405a-a13a-58f44b002aa6>;
 .
 
 :file_extension
@@ -110,5 +110,5 @@
 	:pattern 			"\\.([^\\.]+)";
 	rdfs:comment 		"Matches the characters after the final (.) dot";
 	dc:link 			<http://regexlib.com/REDetails.aspx?regexp_id=688>;
-	dc:creator 			<http://regexlib.com/UserPatterns.aspx?authorId=e7f8a3ee-b325-405a-a13a-58f44b002aa6>;
+	dc:creator 			<http://regexlib.com/userPatterns.aspx?authorId=e7f8a3ee-b325-405a-a13a-58f44b002aa6>;
 .

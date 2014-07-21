@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Scorpio (c) 2014
  * Module: com.scorpio4.vendor.spring
- * User  : lee
+ * @author lee
  * Date  : 1/07/2014
  * Time  : 12:47 AM
  */

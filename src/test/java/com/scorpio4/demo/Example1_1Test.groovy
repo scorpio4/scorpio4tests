@@ -1,15 +1,15 @@
 package com.scorpio4demo.demo
-import com.scorpio4.test.Scorpio4TestCase
+
 /**
  * scorpio4-oss (c) 2014
  * Module: com.scorpio4demo.demo
- * User  : lee
+ * @author lee
  * Date  : 3/07/2014
  * Time  : 12:51 PM
  *
  *
  */
-public class Example1_1Test extends Scorpio4TestCase {
+public class Example1_1Test {
 
 //	public void testInnerOuterBeans() {
 //		provision("scorpio4/bean/Example1_1.n3");
@@ -17,7 +17,7 @@ public class Example1_1Test extends Scorpio4TestCase {
 //		RDFBeanDefinitionReader ActiveBeans = new RDFBeanDefinitionReader(connection, applicationContext);
 //
 //		def innerBeanName = "bean:com.scorpio4demo.demo.Example1_1";
-//		def outerBeanName = "urn:scorpio4demo:Example1_1";
+//		def outerBeanName = "http://scorpio4.com/v1/examples/Example1_1";
 //
 //		ActiveBeans.loadBeanDefinitions(innerBeanName);
 //		def innerBean = ActiveBeans.getBean(innerBeanName);

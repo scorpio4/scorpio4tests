@@ -1,5 +1,4 @@
 package com.scorpio4.vendor.sesame.fn
-import com.scorpio4.test.Scorpio4TestCase
 import com.scorpio4.vocab.COMMON
 import org.openrdf.model.ValueFactory
 import org.openrdf.model.impl.ValueFactoryImpl
@@ -11,7 +10,7 @@ import org.openrdf.model.impl.ValueFactoryImpl
  * 
  * This code does something useful
  */
-class ContriveTest extends Scorpio4TestCase {
+class ContriveTest extends GroovyTestCase {
 	ValueFactory vf = new ValueFactoryImpl();
 
 	void testGetURI() {
