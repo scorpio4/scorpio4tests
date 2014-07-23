@@ -2,7 +2,8 @@ package com.scorpio4.iq
 import com.scorpio4.assets.Asset
 import com.scorpio4.iq.exec.SPARQLing
 import com.scorpio4.vendor.sesame.store.MemoryRDFSRepository
-import com.scorpio4.vocab.COMMON
+import com.scorpio4.vocab.COMMONS
+
 /**
  * Scorpio4 (c) 2014
  * Module: com.scorpio4.iq
@@ -19,7 +20,7 @@ class SPARQLingTest extends GroovyTestCase {
 //	    MockEngine.provision(repository, "", getClass().getClassLoader());
 	    def connection = repository.getConnection()
         def sparqling = new SPARQLing(connection);
-	    Asset query = new Asset("urn:test", "SELECT DISTINCT ?o WHERE {?s ?p ?o}", COMMON.MIME_SPARQL);
+	    Asset query = new Asset("urn:test", "SELECT DISTINCT ?o WHERE {?s ?p ?o}", COMMONS.MIME_SPARQL);
         def future = sparqling.execute(query, ["hello": "world"])
         assert future!=null;
         def result = future.get();

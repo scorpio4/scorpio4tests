@@ -7,18 +7,21 @@ import com.scorpio4.oops.FactException;
 import com.scorpio4.vendor.sesame.MockRepositoryManager;
 import com.scorpio4.vendor.sesame.store.MemoryRDFSRepository;
 import com.scorpio4.vendor.sesame.util.SesameHelper;
-import com.scorpio4.vocab.COMMON;
+import com.scorpio4.vocab.COMMONS;
+import org.apache.camel.CamelContext;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
+import org.openrdf.repository.config.RepositoryConfigException;
 import org.openrdf.repository.sail.config.RepositoryResolver;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.GenericApplicationContext;
 
+import javax.naming.NamingException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 /**
  * scorpio4-oss (c) 2014
@@ -54,16 +57,15 @@ public class MockEngine implements ExecutionEnvironment {
 		this.config=config;
 		this.repository=repository;
 		repositoryResolver = new MockRepositoryManager(repository);
-		context = new GenericApplicationContext();
 
 		RepositoryConnection connection = repository.getConnection();
 		SesameHelper.defaultNamespaces(connection);
 		connection.begin();
 		// Scorpio4 default namespaces
-		connection.setNamespace("core", COMMON.CORE);
-		connection.setNamespace("flo", COMMON.CORE+"flo/");
-		connection.setNamespace("bean", COMMON.CORE+"bean/");
-		connection.setNamespace("asq", COMMON.CORE+"asq/");
+		connection.setNamespace("core", COMMONS.CORE);
+		connection.setNamespace("flo", COMMONS.CORE+"flo/");
+		connection.setNamespace("bean", COMMONS.CORE+"bean/");
+		connection.setNamespace("asq", COMMONS.CORE+"asq/");
 		connection.commit();
 		connection.close();
 	}
@@ -72,7 +74,14 @@ public class MockEngine implements ExecutionEnvironment {
 		try {
 			connection = repository.getConnection();
 			assetRegisters = new AssetRegisters(connection);
+
+			context = RuntimeHelper.newSpringContext(this);
+
 		} catch (RepositoryException e) {
+			e.printStackTrace();
+		} catch (NamingException e) {
+			e.printStackTrace();
+		} catch (RepositoryConfigException e) {
 			e.printStackTrace();
 		}
 	}
@@ -85,10 +94,16 @@ public class MockEngine implements ExecutionEnvironment {
 		}
 
 	}
+
+	/* Convenience */
+	public CamelContext newCamel() {
+		return RuntimeHelper.newCamelContext(this);
+	}
+
 	private static Map defaultConfig() {
 		Map config = new HashMap();
 		config.put("httpPort", 9091);
-		config.put("mock", "MOCK");
+		config.put("java.naming.factory.initial","org.apache.camel.util.jndi.CamelInitialContextFactory");
 		return config;
 	}
 
@@ -115,6 +130,12 @@ public class MockEngine implements ExecutionEnvironment {
 	@Override
 	public Map getConfig() {
 		return config;
+	}
+
+	public Properties getProperties() {
+		Properties properties = new Properties();
+		properties.putAll(getConfig());
+		return properties;
 	}
 
 	@Override

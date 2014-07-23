@@ -14,7 +14,7 @@
 
 
 <urn:com.scorpio4.vendor.spring.HelloWorld>		a	<bean:com.scorpio4.vendor.spring.HelloWorld>.
-<urn:com.scorpio4.vendor.spring.HelloWorld>	<urn:com.scorpio4.vendor.spring.HelloWorld#setGreeting>	"greetings".
+<urn:com.scorpio4.vendor.spring.HelloWorld>		<urn:com.scorpio4.vendor.spring.HelloWorld#setGreeting>	"greetings".
 
 <bean:com.scorpio4.vendor.spring.HelloWorld>	a 	bean:Bean.
 

@@ -6,7 +6,7 @@ import com.scorpio4.iq.vocab.ASQVocabulary
 import com.scorpio4.runtime.MockEngine
 import com.scorpio4.vendor.sesame.util.RDFScalars
 import com.scorpio4.vendor.sesame.util.SesameHelper
-import com.scorpio4.vocab.COMMON
+import com.scorpio4.vocab.COMMONS
 
 import static com.scorpio4.vendor.sesame.util.SesameHelper.*
 
@@ -112,19 +112,19 @@ class ASQTest extends GroovyTestCase {
 		def asset = assets.getAsset( simpleURI, null);
 		assert asset!=null;
 		assert asset.getIdentity() == simpleURI;
-		assert asset.getMimeType() == COMMON.MIME_SPARQL;
+		assert asset.getMimeType() == COMMONS.MIME_SPARQL;
 		assert asset.getContent().toString().contains("SELECT");
 
 		asset = assets.getAsset( inferURI, null);
 		assert asset!=null;
 		assert asset.getIdentity() == inferURI;
-		assert asset.getMimeType() == COMMON.MIME_SPARQL;
+		assert asset.getMimeType() == COMMONS.MIME_SPARQL;
 		assert asset.getContent().toString().contains("SELECT");
 
 		asset = assets.getAsset( learnURI, null);
 		assert asset!=null;
 		assert asset.getIdentity() == learnURI;
-		assert asset.getMimeType() == COMMON.MIME_SPARQL;
+		assert asset.getMimeType() == COMMONS.MIME_SPARQL;
 		assert asset.getContent().toString().contains("CONSTRUCT");
 		asq.stop()
 		assert !asq.isActive();
@@ -137,7 +137,7 @@ class ASQTest extends GroovyTestCase {
 		engine.provision("scorpio4/asq/simple.n3");
 		RDFScalars scalars = new RDFScalars(connection)
 
-		assert scalars.isTypeOf(simpleURI, COMMON.CORE+"asq/Query");
+		assert scalars.isTypeOf(simpleURI, COMMONS.CORE+"asq/Query");
 
 		connection.close();
 		engine.stop();

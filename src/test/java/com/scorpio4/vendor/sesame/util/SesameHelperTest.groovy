@@ -1,7 +1,7 @@
 package com.scorpio4.vendor.sesame.util
 
 import com.scorpio4.vendor.sesame.store.MemoryRDFSRepository
-import com.scorpio4.vocab.COMMON
+import com.scorpio4.vocab.COMMONS
 
 /**
  * scorpio4-oss (c) 2014
@@ -19,7 +19,7 @@ class SesameHelperTest extends GroovyTestCase {
 		def connection = memoryRDFSRepository.getConnection();
 		SesameHelper.defaultNamespaces(connection);
 		def namespace = connection.getNamespace("xsd");
-		assert namespace == COMMON.XSD;
+		assert namespace == COMMONS.XSD;
 		connection.close();
 		memoryRDFSRepository.shutDown()
 	}
@@ -30,7 +30,7 @@ class SesameHelperTest extends GroovyTestCase {
 		SesameHelper.defaultNamespaces(connection);
 		def pragma = SesameHelper.explodePragmas(connection, "@namespaces");
 		assert pragma != null;
-		assert pragma.contains(COMMON.ACL)
+		assert pragma.contains(COMMONS.ACL)
 		connection.close();
 		memoryRDFSRepository.shutDown()
 	}

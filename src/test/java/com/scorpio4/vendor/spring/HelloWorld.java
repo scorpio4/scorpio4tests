@@ -3,6 +3,8 @@ package com.scorpio4.vendor.spring;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Resource;
+
 /**
  * Scorpio (c) 2014
  * Module: com.scorpio4.vendor.spring
@@ -12,6 +14,8 @@ import org.slf4j.LoggerFactory;
  */
 public class HelloWorld {
 	static protected final Logger log = LoggerFactory.getLogger(HelloWorld.class);
+
+	@Resource(name="Greetings")
 	GreetingsEarthling greetingsEarthling;
 
 	public HelloWorld() {
@@ -20,14 +24,23 @@ public class HelloWorld {
 
 	public HelloWorld(GreetingsEarthling earthling) {
 		this.greetingsEarthling=earthling;
-		log.debug(earthling.toString());
+		log.debug("Hello! "+earthling.toString());
 	}
 
 	public boolean isWelcomed() {
 		return greetingsEarthling!=null;
 	}
 
+	public GreetingsEarthling getGreetings() {
+		return greetingsEarthling;
+	}
+
+	public void setGreetings(GreetingsEarthling greetingsEarthling) {
+		this.greetingsEarthling = greetingsEarthling;
+	}
+
+
 	public String toString() {
-		return isWelcomed()?greetingsEarthling.toString():"Who are?";
+		return isWelcomed()?"Hi! "+greetingsEarthling.toString():"Who are?";
 	}
 }

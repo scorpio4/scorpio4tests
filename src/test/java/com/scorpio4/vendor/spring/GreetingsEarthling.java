@@ -1,5 +1,7 @@
 package com.scorpio4.vendor.spring;
 
+import java.util.Date;
+
 /**
  * Scorpio (c) 2014
  * Module: com.scorpio4.vendor.spring
@@ -10,6 +12,7 @@ package com.scorpio4.vendor.spring;
 public class GreetingsEarthling {
 
 	public GreetingsEarthling() {
+		System.out.println("Greetings @ "+new Date());
 	}
 
 	public String toString() {

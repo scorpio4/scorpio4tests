@@ -13,11 +13,11 @@
 
 <direct:flo:self:sparql>	flo:to (
 	<self:asset:urn:scorpio4tests:flo:sparql>
-	<sparql:select:self?outputType=json>
-	<file://temp.test/flo/self/sparql/>
+	<sparql:construct:self?outputType=JSON-LD>
+	[ flo:io <file://temp.test/flo/self/sparql/> ]
 ).
 
 # Define the SPARQL query as named Asset
 <urn:scorpio4tests:flo:sparql>
-	core:hasAsset			"SELECT DISTINCT ?s ?p ?o WHERE {?s ?p ?o } LIMIT 2"^^<http://www.iana.org/assignments/media-types/application/x-sparql-query>;
+	core:hasAsset			"CONSTRUCT { ?s ?p ?o } WHERE {?s ?p ?o }"^^<http://www.iana.org/assignments/media-types/application/x-sparql-query>;
 .

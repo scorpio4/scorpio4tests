@@ -25,7 +25,7 @@ class jGitTest {
 		gitRoot.getParentFile().mkdirs();
 
 		FileRepository repository= new FileRepository(gitRoot);
-		repository.create();
+		if (!gitRoot.exists()) repository.create();
 
 		Git git = new Git(repository);
 		git.close();

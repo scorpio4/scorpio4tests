@@ -1,0 +1,19 @@
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
+
+<urn:scorpio4tests:>
+	flo:from			<direct:vendor/camel/any23>;
+.
+
+<direct:vendor/camel/any23>
+	a					core:Recipe;
+	skos:prefLabel		"Extra RDF snippets";
+	flo:to (
+		[ flo:io 	<http://rdfa.info/index.html> ]
+		[ flo:to 	<any23:body> ]
+		[ flo:io	<file://./temp.test/camel/any23/> ]
+		[ flo:log	"Testing SPARQL" ]
+
+	);
+.

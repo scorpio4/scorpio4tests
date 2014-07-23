@@ -1,5 +1,5 @@
 package com.scorpio4.vendor.sesame.fn
-import com.scorpio4.vocab.COMMON
+import com.scorpio4.vocab.COMMONS
 import org.openrdf.model.ValueFactory
 import org.openrdf.model.impl.ValueFactoryImpl
 /**
@@ -15,7 +15,7 @@ class ContriveTest extends GroovyTestCase {
 
 	void testGetURI() {
 		Contrive contrive = new Contrive();
-		assert contrive.getURI().startsWith(COMMON.FN+"contrive");
+		assert contrive.getURI().startsWith(COMMONS.FN+"contrive");
 	}
 
 	void testEvaluateContrive() {
