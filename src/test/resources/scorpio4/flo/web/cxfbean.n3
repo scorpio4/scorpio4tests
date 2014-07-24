@@ -1,15 +1,36 @@
+# W3C - RDF & RDFS
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: 		<http://www.w3.org/2004/02/skos/core#> .
+@prefix eg: 		<http://example.org/>.
+
+# Scorpio4 Active Vocabularies
 @prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
 @prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix asq: 		<http://scorpio4.com/v1/vocab/asq/>.
 @prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
-<urn:scorpio4tests:>
-	flo:from			<jetty:http://0.0.0.0:{httpPort}/flo/cxfbean>;
-.
+# ----------------------------------------------------------------------------------------
 
-<jetty:http://0.0.0.0:{httpPort}/flo/cxfbean> flo:to (
+@prefix : 			<urn:scorpio4tests:flo:web:cxfbean:>.
+
+:	a				eg:Example;
+	rdfs:label		"FLO: CXF (Rest API) Example";
+	rdfs:comment	"";
+.
+# ----------------------------------------------------------------------------------------
+
+: flo:to (
 	[ flo:script "hello" ]
 	[ flo:to <file://temp.test/jaxrs/> ]
 ).
 
 <urn:com.scorpio4.test.JAXRS> a <bean:com.scorpio4.test.JAXRS>.
 <bean:com.scorpio4.test.JAXRS> a bean:Bean.
+
+# Wire up to the Test Engine
+
+<urn:scorpio4tests:>	flo:from			<jetty:http://0.0.0.0:{httpPort}/flo/cxfbean>.
+<jetty:http://0.0.0.0:{httpPort}/flo/cxfbean> flo:to	:.
+
+

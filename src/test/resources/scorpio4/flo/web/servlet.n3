@@ -1,14 +1,26 @@
+# W3C - RDF & RDFS
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: 		<http://www.w3.org/2004/02/skos/core#> .
+@prefix eg: 		<http://example.org/>.
+
+# Scorpio4 Active Vocabularies
 @prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
 @prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix asq: 		<http://scorpio4.com/v1/vocab/asq/>.
 @prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
-<urn:scorpio4tests:>
-	flo:from			<servlet:test>;
+# ----------------------------------------------------------------------------------------
+
+@prefix : 			<urn:scorpio4tests:flo:web:cxfbean:>.
+
+:	a				eg:Example;
+	rdfs:label		"FLO: Servlet Example";
+	rdfs:comment	"";
 .
+# ----------------------------------------------------------------------------------------
 
-# Declare a FLO pipeline
-
-<servlet:test>	flo:to (
+:	flo:to (
 	<self:asset:urn:scorpio4tests:pipeline:sparql>
 	<sparql:self?outputType=xml>
 	<file://temp.test/>
@@ -18,3 +30,7 @@
 <urn:scorpio4tests:pipeline:sparql>
 	core:hasAsset			"SELECT DISTINCT ?s ?p ?o WHERE {?s ?p ?o } LIMIT 2"^^<http://www.iana.org/assignments/media-types/application/x-sparql-query>;
 .
+
+# Declare a FLO pipeline
+<urn:scorpio4tests:>		flo:from		<servlet:test>.
+<servlet:test>				flo:to			:.

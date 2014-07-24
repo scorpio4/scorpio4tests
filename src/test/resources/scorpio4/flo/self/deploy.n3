@@ -1,11 +1,30 @@
+# W3C - RDF & RDFS
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: 		<http://www.w3.org/2004/02/skos/core#> .
+@prefix eg: 		<http://example.org/>.
+
+# Scorpio4 Active Vocabularies
 @prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
 @prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix asq: 		<http://scorpio4.com/v1/vocab/asq/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
-# Declare initial FLOs for deploy
+# ----------------------------------------------------------------------------------------
 
+@prefix : 			<urn:scorpio4tests:flo:self:deploy:>.
 
-<urn:scorpio4tests:>	flo:from	<file://./scorpio4/scorpio4tests/src/test/resources/?noop=true&recursive=true> .
+:	a				asq:Query, eg:Example;
+	rdfs:label		"FLO: Deploy Example";
+	rdfs:comment	"Deploy test resources to local repository";
+.
+# ----------------------------------------------------------------------------------------
 
-<file://./scorpio4/scorpio4tests/src/test/resources/?noop=true&recursive=true>
-	flo:to	(<log:deploy?level=INFO> <self:deploy:>).
+:		flo:to (
+			[ flo:io <file://./scorpio4/scorpio4tests/src/test/resources/?noop=true&recursive=true> ]
+			[ flo:to <self:deploy> ]
+).
 
+# Wire up with to Test Engine
+
+<urn:scorpio4tests:>	flo:from	:.

@@ -1,19 +1,37 @@
+# W3C - RDF & RDFS
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: 		<http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
+@prefix mime: 		<http://www.iana.org/assignments/media-types/>.
+@prefix eg: 		<http://example.org/>.
+
+# Scorpio4 Active Vocabularies
 @prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
 @prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix asq: 		<http://scorpio4.com/v1/vocab/asq/>.
 @prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
-<urn:scorpio4tests:>
-	flo:from			<direct:vendor/camel/any23>;
-.
+# ----------------------------------------------------------------------------------------
+@prefix : 			<urn:scorpio4tests:vendor:camel:any23:>.
 
-<direct:vendor/camel/any23>
-	a					core:Recipe;
-	skos:prefLabel		"Extra RDF snippets";
-	flo:to (
-		[ flo:io 	<http://rdfa.info/index.html> ]
+:	a				eg:Example;
+	a				core:Recipe;
+	rdfs:label		"FLO: Any23 RDF Extraction Example";
+	rdfs:comment	"";
+.
+# ----------------------------------------------------------------------------------------
+
+:	flo:to (
+		[ flo:io 	<http://www.bbc.co.uk/news/> ]
 		[ flo:to 	<any23:body> ]
 		[ flo:io	<file://./temp.test/camel/any23/> ]
 		[ flo:log	"Testing SPARQL" ]
 
 	);
 .
+
+# Wire-up the Test Engine
+
+<urn:scorpio4tests:>	flo:from			:.
+

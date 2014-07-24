@@ -201,6 +201,14 @@
     <orderEntry type="library" name="Maven: javax.mail:mail:1.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-script:2.13.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-restlet:2.13.1" level="project" />
+    <orderEntry type="library" name="Maven: org.restlet.osgi:org.restlet:2.1.7" level="project" />
+    <orderEntry type="library" name="Maven: org.osgi:org.osgi.core:4.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.restlet.osgi:org.restlet.ext.httpclient:2.1.7" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.1.1" level="project" />
+    <orderEntry type="library" name="Maven: net.jcip:jcip-annotations:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.james:apache-mime4j:0.6" level="project" />
+    <orderEntry type="library" name="Maven: org.restlet.osgi:org.restlet.ext.ssl:2.1.7" level="project" />
+    <orderEntry type="library" name="Maven: org.jsslutils:jsslutils:1.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-servlet:2.13.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-http:2.13.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-test-spring:2.13.1" level="project" />
@@ -240,10 +248,11 @@
     <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.5.11" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.14" level="project" />
-    <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.1" level="project" />
     <orderEntry type="library" name="Maven: org.jruby:jruby-complete:1.7.13" level="project" />
     <orderEntry type="library" name="Maven: org.python:jython:2.7-b2" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-eclipse-batch:2.1.8-01" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.0.1" level="project" />
     <orderEntry type="module" module-name="scorpio4vocabs" />
     <orderEntry type="module" module-name="scorpio4curators" />
     <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.7.2" level="project" />

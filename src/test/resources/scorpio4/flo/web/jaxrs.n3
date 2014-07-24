@@ -1,21 +1,47 @@
+# W3C - RDF & RDFS
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: 		<http://www.w3.org/2004/02/skos/core#> .
+@prefix eg: 		<http://example.org/>.
+
+# Scorpio4 Active Vocabularies
 @prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
 @prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix asq: 		<http://scorpio4.com/v1/vocab/asq/>.
 @prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
-<urn:scorpio4tests:>
-	flo:from			<jetty:http://0.0.0.0:9000/flo/?matchOnUriPrefix=true>;
-	flo:from			<direct:flo/web/jaxrs/request>;
-.
+# ----------------------------------------------------------------------------------------
+# About
 
-<jetty:http://0.0.0.0:9000/flo/?matchOnUriPrefix=true> flo:to (
+@prefix : 			<urn:scorpio4tests:flo:web:jaxrs:>.
+
+:	a				eg:Example;
+	rdfs:label		"FLO: JAX-RS Example";
+	rdfs:comment	"Send an HTTP request to a JAX-RS service";
+.
+# ----------------------------------------------------------------------------------------
+# Route Definitions
+
+:	flo:to (
 	[ flo:to <cxfbean:urn:com.scorpio4.test.JAXRS> ]
-	[ flo:body "woot ${body}" ]
+	[ flo:body "received: ${body}" ]
 ).
 
-
+# ----------------------------------------------------------------------------------------
+# Bean Definitions
 
 <urn:com.scorpio4.test.JAXRS> a <bean:com.scorpio4.test.JAXRS>.
 <bean:com.scorpio4.test.JAXRS> a bean:Bean.
 
-# Test the route by issuing an HTTP request
-<direct:flo/web/jaxrs/request>	flo:io <http://127.0.0.1:9000/flo/test/jaxrs/world>.
+# ----------------------------------------------------------------------------------------
+# Wire-up the Test Engine
+
+<urn:scorpio4tests:>
+	flo:from			<jetty:http://0.0.0.0:9000/flo/?matchOnUriPrefix=true>;
+	flo:from			:test;
+.
+<jetty:http://0.0.0.0:9000/flo/?matchOnUriPrefix=true> flo:to :.
+
+# Wire-up direct tests
+:test					flo:io		( <http://127.0.0.1:9000/flo/test/jaxrs/greetings> ).
+

@@ -30,9 +30,9 @@ class JAXRSTest extends GroovyTestCase {
 		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);
 		activeVocabularies.startAndWait();
 
-		def activated = activeVocabularies.activate("direct:flo/web/jaxrs/request", null, String.class);
+		def activated = activeVocabularies.activate("urn:scorpio4tests:flo:web:jaxrs:test", null, String.class);
 		assert activated!=null;
-		assert activated == "woot hello: world";
+		assert activated == "received: hello: greetings";
 
 		activeVocabularies.stop()
 		engine.stop()

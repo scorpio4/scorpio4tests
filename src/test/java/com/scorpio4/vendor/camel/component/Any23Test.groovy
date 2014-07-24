@@ -1,6 +1,7 @@
 package com.scorpio4.vendor.camel.component
 import com.scorpio4.runtime.MockEngine
 import com.scorpio4.vendor.camel.component.any23.Any23Component
+import org.apache.any23.rdf.RDFUtils
 import org.apache.camel.ProducerTemplate
 import org.apache.camel.builder.RouteBuilder
 /**
@@ -13,6 +14,12 @@ import org.apache.camel.builder.RouteBuilder
  *
  */
 class Any23Test extends GroovyTestCase {
+	String webPage = "http://www.bbc.co.uk/news/"
+
+	void testURI() {
+		def uri = new URI(RDFUtils.fixAbsoluteURI("http://www.bbc.co.uk/news/"));
+		uri = new URI(RDFUtils.fixAbsoluteURI("bean://com.test.Test"));
+	}
 
 	void testAny23() {
 		MockEngine engine = new MockEngine();
@@ -23,7 +30,7 @@ class Any23Test extends GroovyTestCase {
 
 		camel.addRoutes(new RouteBuilder() {
 			void configure() throws Exception {
-				from("direct:any23").to("http://rdfa.info/index.html").to("any23:body").to("file://./temp.test/camel/any23/").end();
+				from("direct:any23").to(webPage).to("any23:body").to("file://./temp.test/camel/any23/").end();
 			}
 		});
 		camel.start()

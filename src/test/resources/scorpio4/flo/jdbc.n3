@@ -1,8 +1,25 @@
+# W3C - RDF & RDFS
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: 		<http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
+@prefix mime: 		<http://www.iana.org/assignments/media-types/>.
+@prefix eg: 		<http://example.org/>.
 
+# Scorpio4 Active Vocabularies
 @prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
 @prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
-@prefix mime: 		<http://www.iana.org/assignments/media-types/>.
+@prefix asq: 		<http://scorpio4.com/v1/vocab/asq/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
+
+# ----------------------------------------------------------------------------------------
+@prefix : 			<urn:scorpio4tests:flo:jdbc:>.
+
+:	a				eg:Example;
+	rdfs:label		"FLO: JDBC DataSource Example";
+	rdfs:comment	"";
+.
+# ----------------------------------------------------------------------------------------
 
 <bean:org.hsqldb.jdbc.JDBCDataSource>	a	bean:Bean.
 
@@ -18,14 +35,19 @@
 	[ flo:to <jdbc:urn:scorpio4tests:hsqldb>]
 ).
 
-<urn:scorpio4tests:>
-	flo:from 			<restlet:http://localhost:9090/tests/flo/jdbc/{query}>;
-	flo:from			<file:./scorpio4/scorpio4tests/src/test/resources/scorpio4/hsqldb/?noop=true>;
-.
-
 <file:./scorpio4/scorpio4tests/src/test/resources/scorpio4/hsqldb/?noop=true>
 	flo:to (
 		<jdbc:urn:scorpio4tests:hsqldb>
 		<log:scorpio4tests>
 	);
 .
+
+# Wire-up the Test Engine
+
+<urn:scorpio4tests:>
+	flo:from 			<restlet:http://localhost:9090/tests/flo/jdbc/{query}>;
+	flo:from			<file:./scorpio4/scorpio4tests/src/test/resources/scorpio4/hsqldb/?noop=true>;
+.
+
+
+

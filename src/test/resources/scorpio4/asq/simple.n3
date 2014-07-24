@@ -9,16 +9,20 @@
 @prefix asq: 		<http://scorpio4.com/v1/vocab/asq/>.
 @prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
+# ----------------------------------------------------------------------------------------
+
+@prefix : 			<urn:scorpio4tests:asq:simple:>.
+
+:	a				asq:Query, eg:Example;
+	rdfs:label		"ASQ: Simple Example";
+	rdfs:comment	"Query to find all Example Queries, so it should at least find itself.";
+.
+# ----------------------------------------------------------------------------------------
 
 # In ASQ the namespace is significant.
 # Any URI scoped to the namespace of the query is consider part of the solution.
 #
-@prefix : 			<urn:scorpio4tests:asq:simple:>.
-
-:	a				asq:Query, eg:Example;
-	rdfs:label		"Simple ASQ Example";
-	rdfs:comment	"Query to find all Example Queries, so it should at least find itself.";
-
+:
 	# returns a distinct collection of solutions. Each solution is a set of named values
 	asq:question ( :this :label :comment );
 

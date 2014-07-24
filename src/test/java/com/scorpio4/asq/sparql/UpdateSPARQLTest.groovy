@@ -6,8 +6,7 @@ import com.scorpio4.curate.CORE
 import org.junit.Test
 
 /**
- * Fact:Core (c) 2013
- * Module: com.factcore.fact.domain.sparql
+ * Scorpio4 (c) 2013
  * @author lee
  * Date  : 11/01/2014
  * Time  : 11:28 PM
@@ -16,7 +15,7 @@ import org.junit.Test
  */
 class UpdateSPARQLTest {
 
-    String baseURI = "urn:test:factcore:fact:query:sparql:ASQ:";
+    String baseURI = "urn:test:scorpio4:fact:query:sparql:ASQ:";
 
     @Test
     void testUpdate() {

@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 public class HelloWorld {
 	static protected final Logger log = LoggerFactory.getLogger(HelloWorld.class);
 
-	@Resource(name="Greetings")
+	@Resource(name="GreetingsEarthling")
 	GreetingsEarthling greetingsEarthling;
 
 	public HelloWorld() {
