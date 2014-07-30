@@ -1,0 +1,8 @@
+# @namespaces
+
+SELECT DISTINCT ?this ?modulus ?exponent
+WHERE {
+	?this cert:key ?key.
+	?key cert:modulus ?modulus.
+	?key cert:exponent ?exponent.
+} BINDINGS ?this { (<{{this}}>) }

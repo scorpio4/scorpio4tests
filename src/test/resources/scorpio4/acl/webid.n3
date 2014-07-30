@@ -1,0 +1,17 @@
+# W3C - RDF & RDFS
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+
+# W3C Cert
+@prefix	cert:		<http://www.w3.org/ns/auth/cert#>.
+@prefix	xsd:		<http://www.w3.org/2001/XMLSchema#>.
+@prefix	foaf:		<http://xmlns.com/foaf/0.1/>.
+
+# Demo Namespace
+@prefix	:			<https://scorpio4demo.com/acl/webid/>.
+
+:demo
+	rdfs:label	"A Demo WebID + RSA Public Key";
+	cert:key [ a cert:RSAPublicKey;
+		cert:modulus "adc05e6727915510dcb84f821b6670a43b58c324eb40748f9c3f98bcc24d40c3ba8ba3110e3cfa926b60be95d7beb06b77b401525a54ea88893738bfd1fd86a4c5d85394b06a1f3179b14e55c029c77da2266ecf5231d3fef7bf0be1e041bb65c1e2b3a35b074cff49ef1b02b5c69aa60222f4988c03f5c4c0597f7f5bb23255"^^xsd:hexBinary;
+		cert:exponent 10001 ] .

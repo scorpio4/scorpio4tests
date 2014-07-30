@@ -149,6 +149,12 @@
 
         <dependency>
             <groupId>com.scorpio4</groupId>
+            <artifactId>scorpio4maven</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.scorpio4</groupId>
             <artifactId>scorpio4vocabs</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -192,11 +198,11 @@
         <!--</dependency>-->
 
         <!-- XML/XSD to RDF/OWL (not in maven central - local install only)  -->
-        <dependency>
-            <groupId>tr.com.srdc</groupId>
-            <artifactId>ontmalizer</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>tr.com.srdc</groupId>-->
+            <!--<artifactId>ontmalizer</artifactId>-->
+            <!--<version>1.0.0</version>-->
+        <!--</dependency>-->
 
         <!-- GIT experimental -->
         <dependency>

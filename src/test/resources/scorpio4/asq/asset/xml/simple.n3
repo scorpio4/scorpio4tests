@@ -13,25 +13,31 @@
 @prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
 # ----------------------------------------------------------------------------------------
-@prefix : 			<urn:scorpio4tests:vendor:camel:any23:>.
+@prefix : 			<urn:scorpio4tests:asq:asset:xml:simple:>.
 
 :	a				eg:Example;
 	a				core:Recipe;
-	rdfs:label		"FLO: Extract RDF from Web Page using Any23";
+	rdfs:label		"Assets: Generate Simple XML";
 	rdfs:comment	"";
 .
 # ----------------------------------------------------------------------------------------
 
-:	flo:to (
-		[ flo:io 	<http://www.bbc.co.uk/news/> ]
-		[ flo:to 	<any23:body> ]
-		[ flo:io	<file://./temp.test/camel/any23/> ]
-		[ flo:log	"Testing SPARQL" ]
+# Define the Asset Generator
+:
+	asq:asset		<urn:scorpio4tests:asq:asset:xml:simple>;
 
-	);
+# Optionally, a static template can be used. It will be bound to an Asset for processing.
+#	asq:template	"<recipe id='${it.this}'>${it.label}</recipe>"^^<http://www.iana.org/assignments/media-types/application/xml>;
+
+# The selector. Each instance of the result set will instantiate an Asset template.
+	asq:where [
+		asq:this	:this;
+		asq:path	"rdf:type/rdfs:subClassOf*"^^asq:PathLiteral;
+		asq:that	core:Recipe;
+	];
+	asq:where [
+		asq:this	:this;
+		asq:has		rdfs:label;
+		asq:that	:label;
+	];
 .
-
-# Wire-up the Test Engine
-
-<urn:scorpio4tests:>	flo:from			:.
-
