@@ -14,7 +14,7 @@
 
 @prefix : 			<urn:scorpio4tests:flo:self:script:>.
 
-:	a				eg:Example;
+:	a				eg:Example, core:Recipe;
 	rdfs:label		"FLO: Script Example";
 	rdfs:comment	"";
 .

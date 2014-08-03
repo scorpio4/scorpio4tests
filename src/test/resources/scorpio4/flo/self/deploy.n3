@@ -14,7 +14,7 @@
 
 @prefix : 			<urn:scorpio4tests:flo:self:deploy:>.
 
-:	a				asq:Query, eg:Example;
+:	a				asq:Query, eg:Example, core:Recipe;
 	rdfs:label		"FLO: Deploy Example";
 	rdfs:comment	"Deploy test resources to local repository";
 .

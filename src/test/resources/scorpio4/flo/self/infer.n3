@@ -14,7 +14,7 @@
 
 @prefix : 			<urn:scorpio4tests:flo:self:infer:>.
 
-:	a				eg:Example;
+:	a				eg:Example, core:Recipe;
 	rdfs:label		"FLO: Inference Example";
 	rdfs:comment	"";
 .

@@ -14,7 +14,7 @@
 
 @prefix : 			<urn:scorpio4tests:flo:self:asset:>.
 
-:	a				eg:Example;
+:	a				eg:Example, core:Recipe;
 	rdfs:label		"FLO: Asset Example";
 	rdfs:comment	"Simple API to lookup an Asset return it to the browser";
 .

@@ -12,33 +12,26 @@
 @prefix asq: 		<http://scorpio4.com/v1/vocab/asq/>.
 @prefix core: 		<http://scorpio4.com/v1/vocab/>.
 
-# ----------------------------------------------------------------------------------------
-@prefix : 			<urn:scorpio4tests:asq:asset:xml:simple:>.
+@prefix : 			<http://scorpio4.com/v1/demo/>.
 
-:	a				eg:Example;
-	a				core:Recipe;
-	rdfs:label		"Assets: Generate Simple XML";
-	rdfs:comment	"";
+# ----------------------------------------------------------------------------------------
+
+:	a				core:Runtime, core:Recipe;
+	rdfs:label		"Scorpio4 QuickStart";
+	rdfs:comment	"Scorpio4 Kernel";
 .
 # ----------------------------------------------------------------------------------------
 
-# Define the Asset Generator
-:
-	asq:asset		<urn:scorpio4tests:asq:asset:xml:simple>;
+:	flo:from	<jetty:http://0.0.0.0:9090/www/>.
+<jetty:http://0.0.0.0:9090/www/{this}>	flo:to	( :www ).
 
-# Optionally, a static template can be used. It will be bound to an Asset for processing.
-#	asq:template	"<recipe id='${it.this}'>${it.label}</recipe>"^^<http://www.iana.org/assignments/media-types/application/xml>;
+# ----------------------------------------------------------------------------------------
 
-# The selector. Each instance of the result set will instantiate an Asset template.
-	asq:where [
-		asq:this	:this;
-# Support SPARQL 1.1 Property Paths
-		asq:path	"rdf:type/rdfs:subClassOf*"^^asq:PathLiteral;
-		asq:that	core:Recipe;
-	];
-	asq:where [
-		asq:this	:this;
-		asq:has		rdfs:label;
-		asq:that	:label;
-	];
+:www
+	rdfs:label		"Web Page Server";
+	core:hasAsset 	"""
+
+"""^^<http://www.iana.org/assignments/media-types/application/x-groovy>;
 .
+
+

@@ -14,7 +14,7 @@
 
 @prefix : 			<urn:scorpio4tests:flo:self:sparql:>.
 
-:	a				eg:Example;
+:	a				eg:Example, core:Recipe;
 	rdfs:label		"FLO: SPARQL Example";
 	rdfs:comment	"";
 .

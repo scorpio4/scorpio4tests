@@ -26,7 +26,7 @@
 		[ flo:io 	<http://www.bbc.co.uk/news/> ]
 		[ flo:to 	<any23:body> ]
 		[ flo:io	<file://./temp.test/camel/any23/> ]
-		[ flo:log	"Testing SPARQL" ]
+		[ flo:log	"Testing Any23" ]
 
 	);
 .

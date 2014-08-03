@@ -14,7 +14,7 @@
 
 @prefix : 			<urn:scorpio4tests:flo:self:sparql:>.
 
-:	a				eg:Example;
+:	a				eg:Example, core:Recipe;
 	rdfs:label		"FLO: Template Example";
 	rdfs:comment	"";
 .
@@ -45,7 +45,7 @@
 # Feed the results into an (HTML) template (urn:scorpio4tests:flo:self:template), defined below
 	[ flo:to <self:template:urn:scorpio4tests:flo:self:template>]
 
-# Feed the bpdy into an (HTML) wrapper (urn:scorpio4tests:flo:self:skin), defined below
+# Feed the body into an (HTML) wrapper (urn:scorpio4tests:flo:self:skin), defined below
 	[ flo:to <self:template:urn:scorpio4tests:flo:self:skin>]
 
 # Save the result into the ./temp.test/ directory

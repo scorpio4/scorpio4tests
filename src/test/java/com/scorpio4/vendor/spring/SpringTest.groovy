@@ -7,8 +7,6 @@ import org.springframework.context.ApplicationContext
 import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor
 import org.springframework.context.support.GenericApplicationContext
 import org.springframework.jndi.support.SimpleJndiBeanFactory
-
-import javax.naming.InitialContext
 /**
  * Scorpio (c) 2014
  * Module: com.scorpio4.vendor.spring
@@ -81,13 +79,21 @@ class SpringTest extends GroovyTestCase {
 		engine.provision(HELLO_WORLD_N3);
 		def connection = engine.getRepository().getConnection();
 
-		InitialContext jndiContext = new InitialContext();
-		jndiContext.bind(EARTHLING_BEAN, new GreetingsEarthling() )
-		jndiContext.lookup(EARTHLING_BEAN);
-
 		def jndiBeanFactory  = new SimpleJndiBeanFactory();
+		jndiBeanFactory.setResourceRef(false);
 
-		def lookup2 = jndiBeanFactory.getBean(EARTHLING_BEAN);
+		def jndiContext = jndiBeanFactory.getJndiTemplate().getContext();
+		assert jndiContext;
+
+//		InitialContext jndiContext = new InitialContext();
+		println "JNDI: "+jndiContext;
+		def greetings_bean = new GreetingsEarthling();
+		jndiContext.bind(EARTHLING_BEAN, greetings_bean )
+		def lookup = jndiContext.lookup(EARTHLING_BEAN);
+		assert lookup
+		assert lookup == greetings_bean;
+
+		def lookup2 = jndiBeanFactory.getBean(EARTHLING_BEAN, GreetingsEarthling.class);
 		assert lookup2!=null;
 		assert lookup2 instanceof GreetingsEarthling
 
