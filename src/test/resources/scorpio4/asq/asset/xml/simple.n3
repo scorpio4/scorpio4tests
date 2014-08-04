@@ -15,9 +15,8 @@
 # ----------------------------------------------------------------------------------------
 @prefix : 			<urn:scorpio4tests:asq:asset:xml:simple:>.
 
-:	a				eg:Example;
-	a				core:Recipe;
-	rdfs:label		"Assets: Generate Simple XML";
+:	a				eg:Example, core:Recipe;
+	rdfs:label		"ASQ: Generate Simple XML";
 	rdfs:comment	"";
 .
 # ----------------------------------------------------------------------------------------

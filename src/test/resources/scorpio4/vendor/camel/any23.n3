@@ -15,8 +15,7 @@
 # ----------------------------------------------------------------------------------------
 @prefix : 			<urn:scorpio4tests:vendor:camel:any23:>.
 
-:	a				eg:Example;
-	a				core:Recipe;
+:	a				eg:Example, core:Recipe;
 	rdfs:label		"FLO: Extract RDF from Web Page using Any23";
 	rdfs:comment	"";
 .

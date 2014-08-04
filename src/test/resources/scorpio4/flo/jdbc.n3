@@ -15,7 +15,7 @@
 # ----------------------------------------------------------------------------------------
 @prefix : 			<urn:scorpio4tests:flo:jdbc:>.
 
-:	a				eg:Example;
+:	a				eg:Example, core:Recipe;
 	rdfs:label		"FLO: JDBC DataSource Example";
 	rdfs:comment	"";
 .

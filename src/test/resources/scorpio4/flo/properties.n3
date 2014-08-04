@@ -15,7 +15,7 @@
 # ----------------------------------------------------------------------------------------
 @prefix : 			<urn:scorpio4tests:flo:properties:>.
 
-:	a				eg:Example;
+:	a				eg:Example, core:Recipe;
 	rdfs:label		"FLO: Properties Example";
 	rdfs:comment	"";
 .

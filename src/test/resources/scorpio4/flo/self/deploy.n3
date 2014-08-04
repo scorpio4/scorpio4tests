@@ -14,15 +14,14 @@
 
 @prefix : 			<urn:scorpio4tests:flo:self:deploy:>.
 
-:	a				asq:Query, eg:Example, core:Recipe;
+:	a				eg:Example, core:Recipe;
 	rdfs:label		"FLO: Deploy Example";
 	rdfs:comment	"Deploy test resources to local repository";
 .
 # ----------------------------------------------------------------------------------------
 
 :		flo:to (
-			[ flo:io <file://./scorpio4/scorpio4tests/src/test/resources/?noop=true&recursive=true> ]
-			[ flo:to <self:deploy> ]
+			[ flo:to <flo:deploy:> ]
 ).
 
 # Wire up with to Test Engine

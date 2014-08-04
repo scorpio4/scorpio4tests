@@ -18,9 +18,12 @@ public class DeployTest extends GroovyTestCase {
 
 		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);
 		activeVocabularies.startAndWait();
-//		def deployed = activeVocabularies.activate("direct:test", null);
-//		println "Deployed: "+deployed
-		Thread.sleep(10000);
+
+		def file = new File("scorpio4/scorpio4tests/src/test/resources/");
+		def activated = activeVocabularies.activate("urn:scorpio4tests:flo:self:deploy:", file );
+		assert activated;
+		assert activated instanceof File;
+		assert file.getAbsolutePath().equals(activated.getAbsolutePath());
 
 		activeVocabularies.stop()
 		engine.stop()

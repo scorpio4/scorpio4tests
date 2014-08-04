@@ -13,7 +13,7 @@
 
 @prefix : 			<urn:scorpio4tests:asq:simple:>.
 
-:	a				asq:Query, eg:Example;
+:	a				asq:Query, eg:Example, core:Recipe;
 	rdfs:label		"ASQ: Simple Example";
 	rdfs:comment	"Query to find all Example Queries, so it should at least find itself.";
 .
