@@ -19,7 +19,9 @@ class CXFBeanTest extends GroovyTestCase {
 		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);
 
 		activeVocabularies.startAndWait();
-		Thread.sleep(60000);
+
+		// TODO: do some tests!!!
+
 		activeVocabularies.stop()
 		engine.stop();
 	}

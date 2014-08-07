@@ -74,7 +74,7 @@ class SpringTest extends GroovyTestCase {
 	}
 
 	@Test
-	void testJNDIInjection() {
+	void TODO_testJNDIInjection() {
 		MockEngine engine = new MockEngine();
 		engine.provision(HELLO_WORLD_N3);
 		def connection = engine.getRepository().getConnection();

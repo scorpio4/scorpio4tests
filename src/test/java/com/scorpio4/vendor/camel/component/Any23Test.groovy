@@ -25,6 +25,13 @@ class Any23Test extends GroovyTestCase {
 		MockEngine engine = new MockEngine();
 		engine.start();
 
+		try {
+			new URL(webPage).openStream()
+		} catch(UnknownHostException e) {
+			println("Offline ... can't test download")
+			return;
+		}
+
 		def camel = engine.newCamel()
 		camel.addComponent("any23", new Any23Component(engine));
 

@@ -20,7 +20,8 @@ public class ServletTest extends GroovyTestCase {
 
 		Scorpio4ActiveVocabularies activeVocabularies = new Scorpio4ActiveVocabularies(engine);
 		activeVocabularies.startAndWait();
-		Thread.sleep(10000);
+
+		//TODO: do tests
 
 		activeVocabularies.stop()
 		engine.stop();

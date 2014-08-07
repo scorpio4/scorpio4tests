@@ -13,10 +13,10 @@ import groovy.util.GroovyTestCase;
  */
 public class HydraVocabularyTest extends GroovyTestCase {
 
-	public void testVocabs() throws Exception {
+	public void TODO_testVocabs() throws Exception {
 		MockEngine engine = new MockEngine();
 		engine.provision("scorpio4/hydra/mock_api.n3", HydraVocabulary.class.getClassLoader());
-		engine.provision("scorpio4/vocabs/hydra/hydra-cg.n3", COMMONS.class.getClassLoader());
+		engine.provision("scorpio4/vocabs/w3c/hydra/hydra-cg.n3", COMMONS.class.getClassLoader());
 		HydraVocabulary hydra = new HydraVocabulary(engine);
 		assert !hydra.isActive();
 		hydra.start();

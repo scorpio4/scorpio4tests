@@ -100,7 +100,7 @@ class WebIDMakerTest extends GroovyTestCase {
 			assert it.this == webId;
 			assert it.modulus;
 			assert it.exponent;
-			def publicKey = webIDGenerator.getPublicKey(it.modulus, it.exponent);
+			def publicKey = webIDGenerator.getPublicKey(""+it.modulus, ""+ it.exponent);
 			assert publicKey;
 			assert publicKey.getAlgorithm()=="RSA";
 			assert publicKey.getModulus(); // can't check direct equality ... base64 vs big-int

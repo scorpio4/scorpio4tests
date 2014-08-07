@@ -12,7 +12,7 @@
 
 # ----------------------------------------------------------------------------------------
 
-@prefix : 			<urn:scorpio4tests:flo:self:sparql:>.
+@prefix : 			<urn:scorpio4tests:flo:self:template:>.
 
 :	a				eg:Example, core:Recipe;
 	rdfs:label		"FLO: Template Example";
@@ -28,13 +28,8 @@
 # internal REST-let web API - http://localhost:9090/flo/self/template
 #
 
-<direct:flo:self:template>
-	a			eg:Example;
-	rdfs:label	"FLO: Template Example";
-.
-
 # Declare the main FLO pipeline
-<direct:flo:self:template>	flo:to (
+:	flo:to (
 
 # Retrieve SPARQL query as a named Asset
 	[ flo:to <self:asset:urn:scorpio4tests:flo:self:template:sparql>]
