@@ -136,12 +136,6 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-project</artifactId>
-            <version>2.1.0</version>
-        </dependency>
-
-        <dependency>
             <groupId>com.scorpio4</groupId>
             <artifactId>scorpio4runtime</artifactId>
             <version>${project.version}</version>
@@ -163,6 +157,12 @@
             <groupId>com.scorpio4</groupId>
             <artifactId>scorpio4curators</artifactId>
             <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-project</artifactId>
+            <version>2.1.0</version>
         </dependency>
 
         <dependency>
