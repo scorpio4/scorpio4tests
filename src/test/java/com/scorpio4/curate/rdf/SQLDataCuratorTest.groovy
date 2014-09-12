@@ -15,7 +15,7 @@ class SQLDataCuratorTest extends GroovyTestCase {
 	}
 
 	void testCurate() {
-		def connection = connect(jdbcURI, "sa", "Apscore101")
+		def connection = connect(jdbcURI, "sa", "")
 		SQLDataCurator sqlCurator = new SQLDataCurator(jdbcURI);
 		sqlCurator.setCatalog("ShippingDelivery")
 		def dir = new File("scorpio4/scorpio4tests/src/test/resources/scorpio4/curate/sql/");
