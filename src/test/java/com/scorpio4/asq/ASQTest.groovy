@@ -1,14 +1,12 @@
 package com.scorpio4.asq
-import com.scorpio4.vendor.sesame.asq.ASQ4Sesame
+
 import com.scorpio4.asq.sparql.ConstructSPARQL
 import com.scorpio4.asq.sparql.SelectSPARQL
 import com.scorpio4.iq.vocab.ASQVocabulary
 import com.scorpio4.runtime.MockEngine
+import com.scorpio4.vendor.sesame.asq.ASQ4Sesame
 import com.scorpio4.vendor.sesame.util.RDFScalars
 import com.scorpio4.vendor.sesame.util.SesameHelper
-import com.scorpio4.vocab.COMMONS
-
-import static com.scorpio4.vendor.sesame.util.SesameHelper.*
 
 /**
  * scorpio4-oss (c) 2014
